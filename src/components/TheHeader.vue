@@ -1,6 +1,6 @@
 <template>
   <div
-    class="md:flex justify-between items-center relative bg-white shadow-md h-[100px] lg:px-96 font-sans subpixel-antialiased font-extrabold whitespace-nowrap z-10"
+    class="md:flex justify-between items-center relative bg-white shadow-md h-[100px] lg:px-48 xl:px-96 font-sans subpixel-antialiased font-extrabold whitespace-nowrap z-10"
   >
     <div class="text-3xl cursor-pointer">
       <RouterLink to="/" class="text-blue-400 block">
@@ -15,10 +15,10 @@
     </div>
 
     <nav
-      class="md:flex md:items-center md:static absolute text-orange-400 cursor-pointer bg-white shadow-md md:shadow-none px-6 md:w-auto w-full duration-300 ease-in"
+      class="md:flex md:items-center md:static absolute text-orange-400 cursor-pointer bg-white md:w-auto w-full duration-300 ease-in"
       :class="[isOpen ? 'left-0' : 'left-[-100%]']"
     >
-      <div class="md:mx-4 md:my-0 my-4" v-for="link in links" :key="link.label">
+      <div class="md:mx-4 md:my-0 my-4 text-center" v-for="link in links" :key="link.label">
         <RouterLink :to="link.path" class="text-base hover:text-blue-400">{{
           link.label
         }}</RouterLink>

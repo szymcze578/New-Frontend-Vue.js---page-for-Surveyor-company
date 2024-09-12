@@ -1,5 +1,5 @@
 <template>
-  <div class="lg:px-96">
+  <div class="lg:px-48 xl:px-96">
     <TheCarousel :slides="data" :interval="3000" :controls="true" :indicators="true"></TheCarousel>
   </div>
 </template>

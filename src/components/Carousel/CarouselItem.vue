@@ -1,7 +1,7 @@
 <template>
   <transition :name="transitionEffect">
-    <div class="absolute" v-show="currentSlide === index">
-      <img :src="props.slide" />
+    <div class="absolute w-full h-full" v-show="currentSlide === index">
+      <img :src="props.slide" class="w-full h-full object-cover" />
     </div>
   </transition>
 </template>
@@ -37,5 +37,16 @@ const transitionEffect = computed(() => {
 
 .slide-out-leave-to {
   transform: translateX(-100%);
+}
+
+.image-container {
+  width: 100%; /* Set the desired width */
+  height: 100%; /* Set the desired height */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the container while being cropped */
 }
 </style>

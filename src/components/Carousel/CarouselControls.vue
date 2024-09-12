@@ -1,6 +1,10 @@
 <template>
-  <button class="carousel-control left" @click="$emit('prev')">Prev</button>
-  <button class="carousel-control right" @click="$emit('next')">Next</button>
+  <button class="carousel-control left" @click="$emit('prev')">
+    <i class="pi pi-angle-double-left"></i>
+  </button>
+  <button class="carousel-control right" @click="$emit('next')">
+    <i class="pi pi-angle-double-right"></i>
+  </button>
 </template>
 
 <script setup>
@@ -9,14 +13,17 @@ defineEmits(['prev', 'next'])
 
 <style>
 .carousel-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(32, 32, 32, 0.5);
   border: none;
-  display: inline-block;
   position: absolute;
-  height: 50px;
-  width: 50px;
+  height: 41px;
+  width: 60px;
   top: calc(50% - 25px);
   color: rgb(255, 255, 255, 0.8);
+  font-size: 25px;
   cursor: pointer;
 }
 
