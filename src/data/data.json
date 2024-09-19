@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Introduction to Vue.js",
+    "description": "Vue.js is a progressive JavaScript framework for building user interfaces. It is designed to be incrementally adoptable and can handle small to large-scale applications."
+  },
+  {
+    "title": "Understanding Tailwind CSS",
+    "description": "Tailwind CSS is a utility-first CSS framework for building custom designs without leaving your HTML. It provides a wide range of utilities that can be combined to build responsive layouts quickly."
+  },
+  {
+    "title": "Getting Started with Node.js",
+    "description": "Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside of a web browser. It is often used to build backend services and APIs."
+  }
+]
