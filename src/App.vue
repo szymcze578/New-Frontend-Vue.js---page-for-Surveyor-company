@@ -1,5 +1,5 @@
 <template>
-  <TheHeader> </TheHeader>
+  <TheHeader class="sticky top-0"> </TheHeader>
   <RouterView></RouterView>
 </template>
 

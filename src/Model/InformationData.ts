@@ -1,4 +1,5 @@
 export interface InformationData {
-  title: String
-  description: String
+  title: string
+  description: string
+  link: string
 }

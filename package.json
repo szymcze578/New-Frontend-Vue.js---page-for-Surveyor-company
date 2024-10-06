@@ -13,6 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fawmi/vue-google-maps": "^0.9.79",
     "autoprefixer": "^10.4.19",
     "bootstrap-icons": "^1.11.3",
     "pinia": "^2.1.7",

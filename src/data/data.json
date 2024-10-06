@@ -1,14 +1,17 @@
 [
   {
-    "title": "Introduction to Vue.js",
-    "description": "Vue.js is a progressive JavaScript framework for building user interfaces. It is designed to be incrementally adoptable and can handle small to large-scale applications."
+    "title": "Dokładność Pomiarów",
+    "description": "Wykorzystujemy nowoczesne technologie geodezyjne, aby zapewnić precyzyjne pomiary terenu. Gwarantujemy dokładność, która spełni wymagania każdego projektu budowlanego.",
+    "link": "/equipment.png"
   },
   {
-    "title": "Understanding Tailwind CSS",
-    "description": "Tailwind CSS is a utility-first CSS framework for building custom designs without leaving your HTML. It provides a wide range of utilities that can be combined to build responsive layouts quickly."
+    "title": "Szybkość Realizacji",
+    "description": "Dzięki doświadczeniu i zaawansowanym narzędziom, realizujemy zlecenia w krótkim czasie. Minimalizujemy czas oczekiwania na wyniki pomiarów, nie tracąc na jakości.",
+    "link": "/time.png"
   },
   {
-    "title": "Getting Started with Node.js",
-    "description": "Node.js is an open-source, cross-platform JavaScript runtime environment that executes JavaScript code outside of a web browser. It is often used to build backend services and APIs."
+    "title": "Kompleksowa Obsługa",
+    "description": "Oferujemy pełne wsparcie w zakresie geodezji – od pomiarów, przez dokumentację, aż po doradztwo. Zapewniamy indywidualne podejście do każdego klienta i projektu.",
+    "link":"/experience.png"
   }
 ]
