@@ -14,6 +14,7 @@
           <span class="block text-base mb-2">ul. Henryka Sienkiewicza 36</span>
           <span class="block text-base">42-400 Zawiercie</span>
           <span class="pi pi-phone"> 602 319 486</span>
+          <InfoIconComponent icon="pi pi-phone" :data="Information"></InfoIconComponent>
         </div>
       </div>
       </div>
@@ -35,6 +36,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import TheCarousel from './Carousel/TheCarousel.vue'
+import InfoIconComponent from './InfoIconComponent.vue'
 import InformationTile from './InformationTile.vue'
 import dataJson from '@/data/data.json'
 import type { InformationData } from '@/Model/InformationData'
@@ -43,9 +45,14 @@ import image1 from '@/assets/image1.jpg'
 import image2 from '@/assets/image2.jpg'
 import image3 from '@/assets/image3.jpg'
 
+//import contactInfoo from '@/data/contactInfo.json'
+
+
 //50.484705003245814, 19.436048856449627
 
 const data = ref([image1, image2, image3])
+
+
 
 const informationData = ref<InformationData[]>(
   dataJson.map((item: any) => ({
@@ -54,6 +61,8 @@ const informationData = ref<InformationData[]>(
     link: item.link
   }))
 )
+
+const Information = ["ul. Henryka Sienkiewicza 36","42-400 Zawiercie"]
 
 console.log('Information data:', informationData.value)
 console.log('Information data json:', dataJson)
