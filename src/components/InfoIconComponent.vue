@@ -1,20 +1,17 @@
 <template>
-<div class="flex">
-    <div class="w-fit mr-3">
-        <span :class="icon"></span>
+  <div class="flex mt-4">
+    <div class="w-fit mr-3 flex justify-center">
+      <span :class="icon"></span>
     </div>
     <div class="w-full">
-        <span v-for="(data, index) in data" :key="index" class="block">{{ data }}</span>
+      <span v-for="(data, index) in data" :key="index" class="block">{{ data }}</span>
     </div>
-</div>
+  </div>
 </template>
 
 <script setup lang="ts">
-
 defineProps<{
-    icon: string,
-    data: string[]
+  icon: string
+  data: string[]
 }>()
-
-
 </script>

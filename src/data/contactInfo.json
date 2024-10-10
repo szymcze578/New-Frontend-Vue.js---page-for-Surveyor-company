@@ -1,0 +1,18 @@
+{
+  "address": {
+    "icon": "pi pi-map-marker",
+    "data": ["ul. Henryka Sienkiewicza 36", "42-400 Zawiercie"]
+  },
+  "email": {
+    "icon": "pi pi-envelope",
+    "data": ["geodimetr@op.pl"]
+  },
+  "phone": {
+    "icon": "pi pi-phone",
+    "data": ["602 319 486"]
+  },
+  "time": {
+    "icon": "pi pi-clock",
+    "data": ["Godziny otwarcia:", "pon-pt: 8:00-16:00", "sob-niedz: zamknięte"]
+  }
+}
