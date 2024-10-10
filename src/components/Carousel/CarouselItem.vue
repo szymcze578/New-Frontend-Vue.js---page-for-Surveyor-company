@@ -2,6 +2,11 @@
   <transition :name="transitionEffect">
     <div class="absolute w-full h-full" v-show="currentSlide === index">
       <img :src="props.slide" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 flex items-center justify-center text-white text-2xl">
+        <p class="font-medium bg-white bg-opacity-50 text-white rounded-lg px-4 py-2">
+          Potrzebujesz geodety?
+        </p>
+      </div>
     </div>
   </transition>
 </template>
