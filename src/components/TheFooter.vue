@@ -8,22 +8,22 @@
         <p>&copy; 2024 Usługi Geodezyjne GEODIMETR mgr inż. Mariusz Czech</p>
       </div>
       <div class="text-3xl">
-        <a
-          href="https://www.facebook.com/profile.php?id=100069162198575"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a :href="companyLink" target="_blank" rel="noopener noreferrer">
           <span class="pi pi-facebook hover:text-blue-600 hover:cursor-pointer"></span>
         </a>
       </div>
     </div>
 
-    <div class="flex justify-end">
-      <div>Autor Szymon Czech</div>
+    <div class="flex justify-end mt-6 text-[12px] text-gray-500 hover:text-white">
+      <a :href="authorLink" target="_blank" rel="noopener noreferrer">
+      <div>Autor Szymon Czech</div></a>
     </div>
   </footer>
 </template>
 
 <script setup lang="ts">
-// You can add any logic or props if needed, for now it's a static footer
+
+const companyLink = "https://www.facebook.com/profile.php?id=100069162198575"
+const authorLink = "https://www.facebook.com/szymon.czech.31"
+
 </script>
