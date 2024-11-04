@@ -1,6 +1,6 @@
 <template>
   <div
-    class="md:flex justify-between items-center relative bg-white shadow-md h-[100px] lg:px-48 xl:px-96 font-sans subpixel-antialiased font-bold whitespace-nowrap z-10"
+    class="md:flex justify-between items-center relative bg-white shadow-md h-[100px] lg:px-48 xl:px-20 font-sans subpixel-antialiased font-bold whitespace-nowrap z-10"
   >
     <div class="text-3xl cursor-pointer">
       <RouterLink to="/" class="text-blue-400 block">

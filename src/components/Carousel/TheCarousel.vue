@@ -28,7 +28,8 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+
 import { onMounted, ref, onBeforeUnmount } from 'vue'
 import CarouselItem from './CarouselItem.vue'
 import CarouselControls from './CarouselControls.vue'
@@ -66,7 +67,7 @@ onBeforeUnmount(() => {
   stopSliderTimer()
 })
 
-function setCurrentSlide(index) {
+function setCurrentSlide(index: number) {
   currentSlide.value = index
 }
 
@@ -99,13 +100,13 @@ function stopSliderTimer() {
   clearInterval(slideInterval.value)
 }
 
-function switchSlide(index) {
+function switchSlide(index: number) {
   const step = index - currentSlide.value
   console.log('Step', step)
   if (step > 0) {
-    this.next(step)
+    next(step)
   } else {
-    this.prev(step)
+    prev(step)
   }
 }
 </script>

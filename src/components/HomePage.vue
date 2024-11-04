@@ -1,24 +1,42 @@
 <template>
-  <div class="lg:px-48 xl:px-96">
-    <TheCarousel :slides="data" :interval="3000" :controls="true" :indicators="true"></TheCarousel>
-    <div class="grid grid-cols-3 gap-6 md:grid-cols-3 mt-8 items-center">
+  <div >
+    <div>
+      <TheCarousel :slides="data" :interval="3000" :controls="true" :indicators="true"></TheCarousel>
+    </div>
+    <div class="lg:px-48 xl:px-96">
+      <OfferComponent></OfferComponent>
+    </div>
+
+    <div class="mt-8 h-[500px] bg-gray-800 ">
+
+    </div>
+    
+    <div class="lg:px-48 xl:px-96 grid grid-cols-3 gap-6 md:grid-cols-3 mt-8 items-center">
       <InformationTile v-for="(info, index) in informationData" :key="index" :information="info" />
     </div>
-    <ContactComponent></ContactComponent>
+
+    <div class="lg:px-48 xl:px-96">
+      <ContactComponent></ContactComponent>
+    </div>
+
   </div>
 </template>
 
 <script setup lang="ts">
+
 import { ref } from 'vue'
 import TheCarousel from './Carousel/TheCarousel.vue'
 import InformationTile from './InformationTile.vue'
-import dataJson from '@/data/data.json'
+import OfferComponent from './OfferComponent.vue'
 import ContactComponent from './ContactComponent.vue'
+
+import dataJson from '@/data/data.json'
 import type { InformationData } from '@/Model/InformationData'
 
 import image1 from '@/assets/image1.jpg'
 import image2 from '@/assets/image2.jpg'
 import image3 from '@/assets/image3.jpg'
+
 
 const data = ref([image1, image2, image3])
 
