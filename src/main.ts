@@ -2,6 +2,8 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { MotionPlugin } from '@vueuse/motion'
+
 import VueGoogleMaps from '@fawmi/vue-google-maps'
 import TheCarousel from './components/Carousel/TheCarousel.vue'
 import CarouselIndicators from './components/Carousel/CarouselIndicators.vue'
@@ -19,7 +21,7 @@ app.component('TheCarousel', TheCarousel)
 app.component('CarouselIndicators', CarouselIndicators)
 app.component('CarouselItem', CarouselItem)
 app.component('CarouselControls', CarouselControls)
-app.component('OfferComponent',OfferComponent)
+app.component('OfferComponent', OfferComponent)
 
 app.use(VueGoogleMaps, {
   load: {
@@ -29,5 +31,6 @@ app.use(VueGoogleMaps, {
 
 app.use(createPinia())
 app.use(router)
+app.use(MotionPlugin)
 
 app.mount('#app')
