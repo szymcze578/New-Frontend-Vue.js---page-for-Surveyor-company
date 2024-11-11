@@ -5,10 +5,10 @@
       <img :src="information.link" :alt="information.title" class="w-[70px] h-[70px] object-cover"/>
     </div>
     <div class="ml-4 flex flex-col justify-between h-full w-full">
-      <div class="font-bold text-lg">
+      <div class="font-bold text-xl">
         {{ information.title }}
       </div>
-      <div class="mt-2 text-sm w-full h-full overflow-hidden text-ellipsis">
+      <div class="mt-2 text-m w-full h-full overflow-hidden text-ellipsis">
         {{ information.description }}
       </div>
     </div>

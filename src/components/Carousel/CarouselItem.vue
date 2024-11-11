@@ -21,7 +21,7 @@ const transitionEffect = computed(() => {
 .slide-in-leave-active,
 .slide-out-enter-active,
 .slide-out-leave-active {
-  transition: all 1s ease-in-out;
+  transition: all 3s ease-in-out;
 }
 
 .slide-in-enter-from {

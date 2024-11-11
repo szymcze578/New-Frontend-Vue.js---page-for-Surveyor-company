@@ -1,8 +1,10 @@
 import './assets/main.css'
 
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import { MotionPlugin } from '@vueuse/motion'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import { MotionPlugin } from '@vueuse/motion';
+import  VueTypedJs  from 'vue3-typed-js';
+import Swiper from 'swiper';
 
 import VueGoogleMaps from '@fawmi/vue-google-maps'
 import TheCarousel from './components/Carousel/TheCarousel.vue'
@@ -10,6 +12,9 @@ import CarouselIndicators from './components/Carousel/CarouselIndicators.vue'
 import CarouselItem from './components/Carousel/CarouselItem.vue'
 import CarouselControls from './components/Carousel/CarouselControls.vue'
 import OfferComponent from './components/OfferComponent.vue'
+import InfoIconComponent from './components/InfoIconComponent.vue'
+import CarouselTextInfo from './components/Carousel/CarouselTextInfo.vue'
+import TypedLine from './components/Carousel/TypedLine.vue'
 
 import App from './App.vue'
 import router from './router'
@@ -22,6 +27,9 @@ app.component('CarouselIndicators', CarouselIndicators)
 app.component('CarouselItem', CarouselItem)
 app.component('CarouselControls', CarouselControls)
 app.component('OfferComponent', OfferComponent)
+app.component('InfoIconComponent', InfoIconComponent)
+app.component('CarouselTextInfo', CarouselTextInfo)
+app.component('TypedLine',TypedLine)
 
 app.use(VueGoogleMaps, {
   load: {
@@ -32,5 +40,6 @@ app.use(VueGoogleMaps, {
 app.use(createPinia())
 app.use(router)
 app.use(MotionPlugin)
+app.use(VueTypedJs)
 
 app.mount('#app')

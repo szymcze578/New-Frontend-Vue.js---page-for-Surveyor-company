@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center py-2">
     <div
-      class="relative w-full h-[600px] overflow-hidden flex-shrink-0"
+      class="relative w-full h-[800px] overflow-hidden flex-shrink-0"
       @mouseover="mouseOver = true"
       @mouseleave="mouseOver = false"
     >
@@ -23,6 +23,7 @@
         @mouseleave="startSlideTimer"
       >
       </CarouselItem>
+      <CarouselTextInfo/>
       <CarouselControls v-if="controls && mouseOver" @prev="prev" @next="next"> </CarouselControls>
     </div>
   </div>
@@ -34,6 +35,7 @@ import { onMounted, ref, onBeforeUnmount } from 'vue'
 import CarouselItem from './CarouselItem.vue'
 import CarouselControls from './CarouselControls.vue'
 import CarouselIndicators from './CarouselIndicators.vue'
+import CarouselTextInfo from './CarouselTextInfo.vue';
 
 const props = defineProps({
   slides: {
