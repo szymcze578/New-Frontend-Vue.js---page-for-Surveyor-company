@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-8 mb-8 h-[500px] flex shadow-lg border-t-8 border-blue-400">
+  <div class="mt-8 mb-8 h-[500px] flex">
     <div class="w-[50%] flex justify-center items-center">
       <div class="w-[300px] h-full p-4">
         <div class="mb-4 mt-4">
@@ -16,25 +16,16 @@
       </div>
     </div>
     <div class="w-[50%] h-full">
-      <GMapMap
-        class=""
-        :center="{ lat: 50.484705003245814, lng: 19.436048856449627 }"
-        :zoom="14"
-        style="width: 100%; height: 492px"
-      >
-        <GMapMarker
-          :position="{ lat: 50.484705003245814, lng: 19.436048856449627 }"
-          :clickable="true"
-        />
-      </GMapMap>
+      <MapView/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import InfoIconComponent from './InfoIconComponent.vue'
+import InfoIconComponent from '@/components/ContactComponent/InfoIconComponent.vue'
 import type { ContactData } from '@/Model/ContactData'
 import contactInfoJson from '@/data/contactInfo.json'
+import MapView from '@/components/ContactComponent/MapView.vue'
 
 const contactInfoData: ContactData = contactInfoJson
 

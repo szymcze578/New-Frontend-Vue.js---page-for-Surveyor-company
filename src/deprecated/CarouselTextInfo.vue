@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import InfoIconComponent from "../InfoIconComponent.vue";
+import InfoIconComponent from "../components/ContactComponent/InfoIconComponent.vue";
 import contactInfoJson from "@/data/contactInfo.json";
 import type { ContactData } from "@/Model/ContactData";
 import {ref} from 'vue'

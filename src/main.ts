@@ -1,34 +1,35 @@
 import './assets/main.css'
 
+import App from './App.vue'
+import router from './router'
+import 'primeicons/primeicons.css'
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { MotionPlugin } from '@vueuse/motion';
 import  VueTypedJs  from 'vue3-typed-js';
 
 import VueGoogleMaps from '@fawmi/vue-google-maps'
-import TheCarousel from './components/Carousel/TheCarousel.vue'
-import CarouselIndicators from './components/Carousel/CarouselIndicators.vue'
-import CarouselItem from './components/Carousel/CarouselItem.vue'
-import CarouselControls from './components/Carousel/CarouselControls.vue'
-import OfferComponent from './components/OfferComponent.vue'
-import InfoIconComponent from './components/InfoIconComponent.vue'
-import CarouselTextInfo from './components/Carousel/CarouselTextInfo.vue'
-import TypedLine from './components/Carousel/TypedLine.vue'
-
-import App from './App.vue'
-import router from './router'
-import 'primeicons/primeicons.css'
+import OfferComponent from '@/components/OfferComponent.vue'
+import ContactComponent from '@/components/ContactComponent/ContactComponent.vue'
+import InfoIconComponent from '@/components/ContactComponent/InfoIconComponent.vue'
+import MapView from '@/components/ContactComponent/MapView.vue'
+import HomePage from '@/components/Pages/HomePage.vue'
+import ServicesPage from '@/components/Pages/ServicesPage.vue'
+import TheFooter from '@/components/Footer/TheFooter.vue'
+import NavigationItem from '@/components/Header/NavigationItem.vue'
+import InformationTile from '@/components/InformationTile.vue'
 
 const app = createApp(App)
 
-app.component('TheCarousel', TheCarousel)
-app.component('CarouselIndicators', CarouselIndicators)
-app.component('CarouselItem', CarouselItem)
-app.component('CarouselControls', CarouselControls)
 app.component('OfferComponent', OfferComponent)
 app.component('InfoIconComponent', InfoIconComponent)
-app.component('CarouselTextInfo', CarouselTextInfo)
-app.component('TypedLine',TypedLine)
+app.component('MapView',MapView)
+app.component('HomePage',HomePage)
+app.component('ServicesPage',ServicesPage)
+app.component('TheFooter',TheFooter)
+app.component('ContactComponent',ContactComponent)
+app.component('NavigationItem',NavigationItem)
+app.component('InformationTile',InformationTile)
 
 app.use(VueGoogleMaps, {
   load: {

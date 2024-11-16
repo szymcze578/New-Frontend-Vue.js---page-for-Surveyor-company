@@ -53,10 +53,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import InformationTile from './InformationTile.vue'
-import OfferComponent from './OfferComponent.vue'
-import ContactComponent from './ContactComponent.vue'
-import CarouselTextInfo from '@/components/Carousel/CarouselTextInfo.vue'
+import InformationTile from '../InformationTile.vue'
+import OfferComponent from '../OfferComponent.vue'
+import ContactComponent from '../ContactComponent/ContactComponent.vue'
+import CarouselTextInfo from '@/deprecated/CarouselTextInfo.vue'
 import type { InformationData } from '@/Model/InformationData'
 import dataJson from '@/data/data.json'
 
