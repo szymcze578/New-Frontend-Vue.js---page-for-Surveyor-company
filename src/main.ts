@@ -4,7 +4,6 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { MotionPlugin } from '@vueuse/motion';
 import  VueTypedJs  from 'vue3-typed-js';
-import Swiper from 'swiper';
 
 import VueGoogleMaps from '@fawmi/vue-google-maps'
 import TheCarousel from './components/Carousel/TheCarousel.vue'
