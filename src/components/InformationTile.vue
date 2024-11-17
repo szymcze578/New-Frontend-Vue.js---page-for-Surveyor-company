@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col min-h-[250px] h-fit text-justify items-center border-t-8 border-orange-400">
+  <div class="flex flex-col min-h-[250px] h-fit text-justify rounded-lg shadow-lg items-center border-4 border-second hover:border-8 hover:border-first transition-all"
+      @mouseleave="showDescription=false">
       <div class="m-5 w-[75px]">
         <img :src="information.link" :alt="information.title" class="object-cover" />
       </div>
@@ -13,7 +14,7 @@
           </div>
         </transition>
         <button
-          class="mt-2 px-4 py-2 bg-first w-fit text-white rounded hover:bg-orange-500"
+          class="mt-2 px-4 py-2 bg-first w-fit text-white rounded-2xl hover:bg-second transition-colors duration-300"
           @click="toggleDescription"
         >
           {{ showDescription ? 'Mniej' : 'Więcej' }}
