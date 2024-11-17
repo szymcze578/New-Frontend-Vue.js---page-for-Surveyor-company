@@ -36,8 +36,6 @@ startTypingText();
 async function startTypingText() {
   let text = props.text;
   let text_to_shown = "";
-    console.log("start_triger", props.start_triger)
-    console.log("!start_triger", !props.start_triger)
   while(!props.start_triger){
     await new Promise(resolve => setTimeout(resolve,100))
   }

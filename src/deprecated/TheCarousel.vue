@@ -35,7 +35,7 @@ import { onMounted, ref, onBeforeUnmount } from 'vue'
 import CarouselItem from './CarouselItem.vue'
 import CarouselControls from './CarouselControls.vue'
 import CarouselIndicators from './CarouselIndicators.vue'
-import CarouselTextInfo from './CarouselTextInfo.vue';
+import CarouselTextInfo from '../components/Pages/HomePage/CarouselTextInfo.vue';
 
 const props = defineProps({
   slides: {
@@ -104,7 +104,6 @@ function stopSliderTimer() {
 
 function switchSlide(index: number) {
   const step = index - currentSlide.value
-  console.log('Step', step)
   if (step > 0) {
     next(step)
   } else {

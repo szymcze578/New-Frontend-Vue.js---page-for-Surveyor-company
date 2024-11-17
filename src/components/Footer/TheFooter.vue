@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="h-[140px] flex flex-col justify-between bg-gray-800 text-white py-8 border-t-8 border-orange-400 lg:px-48 xl:px-96"
+    class="h-[140px] flex flex-col justify-between bg-third text-white py-8 border-t-8 border-first lg:px-48 xl:px-96"
   >
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
       <div class="mb-4 md:mb-0">
@@ -9,7 +9,7 @@
       </div>
       <div class="text-3xl">
         <a :href="companyLink" target="_blank" rel="noopener noreferrer">
-          <span class="pi pi-facebook hover:text-blue-600 hover:cursor-pointer"></span>
+          <span class="pi pi-facebook hover:text-second hover:cursor-pointer"></span>
         </a>
       </div>
     </div>

@@ -3,9 +3,9 @@
     class="md:flex justify-between items-center relative bg-white shadow-md h-[100px] lg:px-48 xl:px-20 font-sans subpixel-antialiased font-bold whitespace-nowrap z-10"
   >
     <div class="text-3xl cursor-pointer">
-      <RouterLink to="/" class="text-blue-400 block">
+      <RouterLink to="/" class="text-second block">
         <span class="block">USŁUGI GEODEZYJNE</span>
-        <span class="text-orange-400">GEO</span><span class="text-blue-400">DIMETR</span>
+        <span class="text-first">GEO</span><span class="text-second">DIMETR</span>
         <span class="text-gray-500 text-lg block font-normal">mgr inż. Mariusz Czech</span>
       </RouterLink>
     </div>

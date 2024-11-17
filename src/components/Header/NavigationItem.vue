@@ -18,5 +18,4 @@ const props = defineProps({
   _link: Object
 })
 
-console.log('links', props._link)
 </script>

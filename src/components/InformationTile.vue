@@ -1,27 +1,62 @@
 <template>
-  <div class="min-h-[250px] text-justify shadow-lg  items-center border-t-8 border-orange-400">
-    <div class="flex m-5">
-    <div class="h-[100px] w-[100px] items-center">
-      <img :src="information.link" :alt="information.title" class="w-[70px] h-[70px] object-cover"/>
-    </div>
-    <div class="ml-4 flex flex-col justify-between h-full w-full">
-      <div class="font-bold text-xl">
-        {{ information.title }}
+  <div class="flex flex-col min-h-[250px] h-fit text-justify items-center border-t-8 border-orange-400">
+      <div class="m-5 w-[75px]">
+        <img :src="information.link" :alt="information.title" class="object-cover" />
       </div>
-      <div class="mt-2 text-m w-full h-full overflow-hidden text-ellipsis">
-        {{ information.description }}
+      <div class="m-4 flex flex-col justify-center  items-center h-full w-full">
+        <div class="font-bold text-xl">
+          {{ information.title }}
+        </div>
+        <transition name="expand" mode="out-in">
+          <div v-if="showDescription" class="text-m m-4 overflow-hidden">
+            {{ information.description }}
+          </div>
+        </transition>
+        <button
+          class="mt-2 px-4 py-2 bg-first w-fit text-white rounded hover:bg-orange-500"
+          @click="toggleDescription"
+        >
+          {{ showDescription ? 'Mniej' : 'Więcej' }}
+        </button>
       </div>
-    </div>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { type InformationData } from '@/Model/InformationData'
+import {ref} from 'vue'
 
 const props = defineProps<{
   information: InformationData
 }>()
 
-console.log("props", props)
+// Create a reactive state to toggle description display
+const showDescription = ref(false);
+
+function toggleDescription() {
+  showDescription.value = !showDescription.value;
+}
+
 </script>
+
+<style scoped>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+
+.expand-enter-active, .expand-leave-active {
+  transition: all 0.5s ease;
+}
+.expand-enter-from, .expand-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+.expand-enter-to, .expand-leave-from {
+  max-height: 1000px; /* Arbitrary high value to allow for expansion */
+  opacity: 1;
+}
+</style>

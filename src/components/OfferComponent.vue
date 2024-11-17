@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-8 mb-8 h-[500px] flex shadow-lg border-t-8 border-blue-400">
+  <div class="mt-8 mb-8 h-[500px] flex shadow-lg border-t-8 border-second">
     <div class="w-[50%] h-full flex justify-center items-center">
       <div class="w-[75%] h-[75%] ">
         <img src="/mapa_gminy_zawiercie.jpg">
@@ -26,6 +26,7 @@ import contactInfoJson from '@/data/contactInfo.json'
 
 const contactInfoData: ContactData = contactInfoJson
 
+function print(){
 for (const key in contactInfoData) {
   if (Object.prototype.hasOwnProperty.call(contactInfoData, key)) {
     const contactInfo = contactInfoData[key]
@@ -35,5 +36,6 @@ for (const key in contactInfoData) {
       console.log(`Data: ${value}`)
     })
   }
+}
 }
 </script>

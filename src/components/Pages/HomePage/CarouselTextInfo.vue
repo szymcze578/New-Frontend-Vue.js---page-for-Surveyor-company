@@ -9,12 +9,12 @@
       />
     </div>
     <div class="text-[60px] font-bold flex">
-      <VueTyped v-if="lines_done[0]" class="text-orange-400"
+      <VueTyped v-if="lines_done[0]" class="text-first"
         :strings="['GEO']"
         :typeSpeed="50"
         @complete="lines_done[1]=true"
       />
-      <VueTyped v-if="lines_done[1]" class="text-blue-400"
+      <VueTyped v-if="lines_done[1]" class="text-second"
         :strings="['DIMETR']"
         :typeSpeed="50"
         @complete="lines_done[2]=true"
@@ -29,7 +29,7 @@
     </div>
     <transition name="fade" mode="out-in">
     <div v-if="lines_done[3]"
-      class="text-white bg-slate-400 rounded-lg text-bold text-[25px] inline-block hover:bg-orange-400 mt-5 transition-all duration-500 ease-in-out"
+      class="text-white bg-slate-400 rounded-lg text-bold text-[25px] inline-block hover:bg-first mt-5 transition-all duration-500 ease-in-out"
     >
         <InfoIconComponent
         class="!mt-0 inline-block justify-center items-center px-4"
@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import InfoIconComponent from "../components/ContactComponent/InfoIconComponent.vue";
+import InfoIconComponent from "../../ContactComponent/InfoIconComponent.vue";
 import contactInfoJson from "@/data/contactInfo.json";
 import type { ContactData } from "@/Model/ContactData";
 import {ref} from 'vue'
@@ -52,7 +52,6 @@ import {ref} from 'vue'
 const lines_done = ref([false, false, false,false]);
 
 const contactInfoData: ContactData = contactInfoJson;
-
 
 for (const key in contactInfoData) {
   if (Object.prototype.hasOwnProperty.call(contactInfoData, key)) {

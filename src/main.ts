@@ -13,11 +13,12 @@ import OfferComponent from '@/components/OfferComponent.vue'
 import ContactComponent from '@/components/ContactComponent/ContactComponent.vue'
 import InfoIconComponent from '@/components/ContactComponent/InfoIconComponent.vue'
 import MapView from '@/components/ContactComponent/MapView.vue'
-import HomePage from '@/components/Pages/HomePage.vue'
+import HomePage from '@/components/Pages/HomePage/HomePage.vue'
 import ServicesPage from '@/components/Pages/ServicesPage.vue'
 import TheFooter from '@/components/Footer/TheFooter.vue'
 import NavigationItem from '@/components/Header/NavigationItem.vue'
 import InformationTile from '@/components/InformationTile.vue'
+import CarouselTextInfo from '@/components/Pages/HomePage/CarouselTextInfo.vue'
 
 const app = createApp(App)
 
@@ -30,6 +31,7 @@ app.component('TheFooter',TheFooter)
 app.component('ContactComponent',ContactComponent)
 app.component('NavigationItem',NavigationItem)
 app.component('InformationTile',InformationTile)
+app.component('CarouselTextInfo',CarouselTextInfo)
 
 app.use(VueGoogleMaps, {
   load: {
