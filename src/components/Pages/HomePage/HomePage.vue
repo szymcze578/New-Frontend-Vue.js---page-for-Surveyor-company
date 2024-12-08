@@ -15,8 +15,13 @@
     </div>
     <InformationComponent class="lg:px-48 xl:px-96"/>
 
-    <div class="lg:px-48 xl:px-90 grid grid-cols-3 gap-6 md:grid-cols-3 mt-8" v-motion-slide-visible-top>
-      <InformationTile v-for="(info, index) in informationData" :key="index" :information="info" />
+    <div class="flex flex-col p-4 my-8 justify-center items-center">
+      <div class="font-bold text-3xl ">
+        Cechują nas
+      </div>
+    </div>
+    <div class="lg:px-48 xl:px-90 grid grid-cols-3 gap-6 md:grid-cols-3 mt-8">
+      <InformationTile v-for="(info, index) in informationData" :key="index" :information="info"/>
     </div>
 
     <div class="mt-8 h-[500px] bg-forth flex z-1000 overflow-hidden">
@@ -27,20 +32,17 @@
       />
     </div>
 
-    <InformationComponent class="lg:px-48 xl:px-96"/>
+    <TechnologiesComponent class="lg:px-48 xl:px-96"/>
 
-    <div class="lg:px-48 xl:px-96">
-      <ContactComponent></ContactComponent>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import InformationTile from '../../InformationTile.vue'
-import ContactComponent from '../../ContactComponent/ContactComponent.vue'
 import CarouselTextInfo from '@/components/Pages/HomePage/CarouselTextInfo.vue'
 import type { InformationData } from '@/Model/InformationData'
+import TechnologiesComponent from '@/components/TechnologiesComponent.vue'
 import ImageInfoPanel from '@/components/Pages/HomePage/ImageInfoPanel.vue'
 import image from '@/assets/rysunek-techniczny-umowa-o-dzieło-scaled.jpg'
 import dataJson from '@/data/data.json'
@@ -63,6 +65,11 @@ const informationData = ref<InformationData[]>(
     link: item.link
   }))
 )
+
+function getDelay(index: number) {
+  return index * 0.2;
+}
+
 </script>
 
 <style>

@@ -32,7 +32,7 @@ const links = ref([
   { label: 'Usługi', path: '/services' },
   { label: 'Współpraca', path: '/cooperation' },
   { label: 'O nas', path: '/about' },
-  { label: 'Kontakt', path: '/kontakt' }
+  { label: 'Kontakt', path: '/contact' }
 ])
 
 const isOpen = ref(false)

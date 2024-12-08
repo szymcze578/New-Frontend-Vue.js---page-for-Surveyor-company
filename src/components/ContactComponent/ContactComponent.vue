@@ -28,15 +28,4 @@ import contactInfoJson from '@/data/contactInfo.json'
 import MapView from '@/components/ContactComponent/MapView.vue'
 
 const contactInfoData: ContactData = contactInfoJson
-
-for (const key in contactInfoData) {
-  if (Object.prototype.hasOwnProperty.call(contactInfoData, key)) {
-    const contactInfo = contactInfoData[key]
-    console.log(`Key: ${key}`)
-    console.log(`Icon: ${contactInfo.icon}`)
-    contactInfo.data.forEach((value) => {
-      console.log(`Data: ${value}`)
-    })
-  }
-}
 </script>

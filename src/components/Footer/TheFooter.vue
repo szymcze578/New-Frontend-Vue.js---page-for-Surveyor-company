@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="h-[140px] flex flex-col justify-between bg-third text-white py-8 border-t-8 border-first lg:px-48 xl:px-96"
+    class="h-[140px] flex flex-col justify-between bg-third text-white py-8 border-t-8 border-first lg:px-48 xl:px-48"
   >
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
       <div class="mb-4 md:mb-0">

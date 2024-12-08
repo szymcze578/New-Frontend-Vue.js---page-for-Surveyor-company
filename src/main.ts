@@ -6,6 +6,7 @@ import 'primeicons/primeicons.css'
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { MotionPlugin } from '@vueuse/motion';
+//@ts-ignore
 import  VueTypedJs  from 'vue3-typed-js';
 
 import VueGoogleMaps from '@fawmi/vue-google-maps'
