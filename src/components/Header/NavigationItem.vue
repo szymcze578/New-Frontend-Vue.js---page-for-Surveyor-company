@@ -1,10 +1,10 @@
 <template>
-  <div class="h-full items-center text-center flex flex-col justify-center">
+  <div class="h-full items-center text-center flex flex-col justify-center mx-3">
     <RouterLink
       :to="_link?.path"
-      class="px-3 flex justify-center text-center items-center h-[60px] w-full hover:bg-gray-500 hover:text-white rounded-lg"
+      class="px-5 py-3 flex justify-center text-center items-center w-full hover:bg-second rounded-lg transition-colors duration-300"
     >
-      <div class="text-base">
+      <div >
         <span>{{ _link?.label }}</span>
       </div>
     </RouterLink>

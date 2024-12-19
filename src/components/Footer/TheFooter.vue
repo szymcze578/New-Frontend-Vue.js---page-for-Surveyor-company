@@ -1,5 +1,5 @@
 <template>
-  <footer
+  <div
     class="h-[140px] flex flex-col justify-between bg-third text-white py-8 border-t-8 border-first lg:px-48 xl:px-48"
   >
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -18,7 +18,7 @@
       <a :href="authorLink" target="_blank" rel="noopener noreferrer">
       <div>Autor Szymon Czech</div></a>
     </div>
-  </footer>
+  </div>
 </template>
 
 <script setup lang="ts">

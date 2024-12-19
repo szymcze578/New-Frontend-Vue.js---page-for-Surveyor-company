@@ -9,7 +9,7 @@
           {{ information.title }}
         </div>
         <transition name="expand" mode="out-in">
-          <div v-if="showDescription" class="text-m m-4 overflow-hidden">
+          <div v-if="showDescription" class="text-xl m-4 overflow-hidden">
             {{ information.description }}
           </div>
         </transition>

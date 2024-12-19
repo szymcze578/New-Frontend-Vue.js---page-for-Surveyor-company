@@ -15,7 +15,7 @@
     </div>
 
     <nav
-      class="md:flex md:items-center md:static absolute text-gray-500 font-medium cursor-pointer bg-white md:w-auto w-full h-full duration-300 ease-in"
+      class="md:flex md:items-center md:static absolute text-black font-medium cursor-pointer bg-white md:w-auto w-full h-full duration-300 ease-in"
       :class="[isOpen ? 'left-0' : 'left-[-100%]']"
     >
       <NavigationItem v-for="link in links" :key="link.label" :_link="link"> </NavigationItem>
@@ -29,8 +29,7 @@ import { RouterLink } from 'vue-router'
 import NavigationItem from './NavigationItem.vue'
 
 const links = ref([
-  { label: 'Usługi', path: '/services' },
-  { label: 'Współpraca', path: '/cooperation' },
+  { label: 'Oferta', path: '/services' },
   { label: 'O nas', path: '/about' },
   { label: 'Kontakt', path: '/contact' }
 ])
