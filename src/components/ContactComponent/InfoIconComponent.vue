@@ -1,6 +1,6 @@
 <template>
   <div class="flex mt-4">
-    <div class="w-fit mr-3 flex justify-center">
+    <div class="w-fit items-center mr-3 flex justify-center">
       <span :class="icon"></span>
     </div>
     <div class="w-full">

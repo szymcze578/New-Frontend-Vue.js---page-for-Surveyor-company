@@ -2,14 +2,21 @@
   <div
     class="md:flex justify-between items-center relative bg-white shadow-md h-[100px] lg:px-48 xl:px-20 font-sans subpixel-antialiased font-bold whitespace-nowrap z-10"
   >
-    <div class="text-3xl cursor-pointer">
-      <RouterLink to="/" class="text-second block">
-        <span class="block">USŁUGI GEODEZYJNE</span>
-        <span class="text-first">GEO</span><span class="text-second">DIMETR</span>
-        <span class="text-gray-500 text-lg block font-normal">mgr inż. Mariusz Czech</span>
-      </RouterLink>
+    <div class="flex w-full">
+      <div class="text-3xl cursor-pointer">
+        <RouterLink to="/" class="text-second block">
+          <span class="block">USŁUGI GEODEZYJNE</span>
+          <span class="text-first">GEO</span><span class="text-second">DIMETR</span>
+          <span class="text-gray-500 text-lg block font-normal">mgr inż. Mariusz Czech</span>
+        </RouterLink>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="flex-row text-gray-500 font-normal mx-20">
+          <InfoIconComponent class="!mt-1" icon="pi pi-phone" :data="['602 319 486']"/>
+          <InfoIconComponent class="!mt-1" icon="pi pi-send" :data="['geodimetr@op.pl']"/>
+        </div>
+      </div>
     </div>
-
     <div class="md:hidden text-4xl absolute text-black right-6 top-7 cursor-pointer">
       <i :class="[isOpen ? 'bi bi-x' : 'bi bi-list']" @click="openMenu()"></i>
     </div>
@@ -27,6 +34,7 @@
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import NavigationItem from './NavigationItem.vue'
+import InfoIconComponent from '@/components/ContactComponent/InfoIconComponent.vue'
 
 const links = ref([
   { label: 'Oferta', path: '/services' },

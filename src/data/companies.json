@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Pomiary sytuacyjno-wysokościowe",
+    "description": "Wykonujemy szczegółowe pomiary terenowe, dostarczając precyzyjnych danych potrzebnych do projektowania, budowy i modernizacji infrastruktury.",
+    "link": "Icons/wysokosc.png"
+  },
+  {
+    "title": "Aktualizacja mapy zasadniczej",
+    "description": "Wprowadzamy zmiany w mapach geodezyjnych wynikające z nowych inwestycji lub zmian terenowych, zapewniając aktualność i zgodność z obowiązującymi przepisami.",
+    "link": "Icons/map_update.png"
+  },
+  {
+    "title": "Mapy do celów projektowych w formie analogowej i numerycznej",
+    "description": "Oferujemy mapy projektowe dostosowane do wymogów biur projektowych i inwestorów, zarówno w tradycyjnej formie papierowej, jak i w wersji cyfrowej, kompatybilnej z systemami CAD.",
+    "link":"Icons/mapy.png"
+  },
+  {
+    "title": "Geodezyjna obsługa inwestycji budowlanych",
+    "description": "Zapewniamy kompleksowe usługi geodezyjne podczas realizacji inwestycji budowlanych, w tym wyznaczanie osi budynków, kontrolę zgodności z projektem oraz inwentaryzację powykonawczą.",
+    "link":"Icons/construction.png"
+  },
+  {
+    "title": "Obsługa budowy sieci kanalizacyjnych, gazowych, energetycznych etc.",
+    "description": "Wspieramy realizację inwestycji infrastrukturalnych, wykonując pomiary i dokumentację geodezyjną dla sieci uzbrojenia terenu.",
+    "link":"Icons/electricity.png"
+  },
+  {
+    "title": "Obsługa geodezyjna dróg, suwnic, kominów, wież GSM itp.",
+    "description": "Specjalizujemy się w obsłudze technicznej dużych projektów inżynierskich, takich jak budowa dróg, obiektów przemysłowych, kominów czy masztów telekomunikacyjnych.",
+    "link":"Icons/route.png"
+  },
+  {
+    "title": "Pomiary objętości mas ziemnych",
+    "description": "Dokonujemy precyzyjnych obliczeń objętości wykopów, nasypów lub innych mas ziemnych, co jest kluczowe dla planowania robót ziemnych i kosztorysowania inwestycji.",
+    "link":"Icons/landscape.png"
+  },
+  {
+    "title": "Opracowania prawne dla Biur Projektowych",
+    "description": "Przygotowujemy specjalistyczną dokumentację geodezyjną i prawno-techniczną wspomagającą biura projektowe w realizacji ich projektów.",
+    "link":"Icons/regulacje.png"
+  },
+  {
+    "title": "Inne nietypowe prace geodezyjne i kartograficzne",
+    "description": "Realizujemy niestandardowe zadania geodezyjne i kartograficzne, takie jak specjalistyczne pomiary i opracowania na potrzeby ochrony środowiska, monitoringu czy badań naukowych.",
+    "link":"Icons/inne.png"
+  }
+]

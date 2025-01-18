@@ -31,7 +31,6 @@ const props = defineProps<{
   information: InformationData
 }>()
 
-// Create a reactive state to toggle description display
 const showDescription = ref(false);
 
 function toggleDescription() {

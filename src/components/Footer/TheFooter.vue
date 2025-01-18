@@ -14,10 +14,6 @@
       </div>
     </div>
 
-    <div class="flex justify-end mt-6 text-[12px] text-gray-500 hover:text-white">
-      <a :href="authorLink" target="_blank" rel="noopener noreferrer">
-      <div>Autor Szymon Czech</div></a>
-    </div>
   </div>
 </template>
 

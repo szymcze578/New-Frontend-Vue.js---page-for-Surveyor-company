@@ -41,7 +41,7 @@
 import { ref } from 'vue'
 import InformationTile from '../../InformationTile.vue'
 import CarouselTextInfo from '@/components/Pages/HomePage/CarouselTextInfo.vue'
-import type { InformationData } from '@/Model/InformationData'
+import { type InformationData, mapInformationData } from '@/Model/InformationData'
 import TechnologiesComponent from '@/components/TechnologiesComponent.vue'
 import ImageInfoPanel from '@/components/Pages/HomePage/ImageInfoPanel.vue'
 import image from '@/assets/rysunek-techniczny-umowa-o-dzieło-scaled.jpg'
@@ -58,13 +58,7 @@ SwiperCore.use([Autoplay, Pagination,Navigation]);
 
 const carouselImages = ref<string[]>(['/Carousel/image1.jpg','/Carousel/image2.jpg','/Carousel/image3.jpg'])
 
-const informationData = ref<InformationData[]>(
-  dataJson.map((item: any) => ({
-    title: item.title,
-    description: item.description,
-    link: item.link
-  }))
-)
+const informationData = ref<InformationData[]>(mapInformationData(dataJson))
 
 function getDelay(index: number) {
   return index * 0.2;

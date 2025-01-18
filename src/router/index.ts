@@ -21,7 +21,10 @@ const router = createRouter({
       name:'contact',
       component: ContactPage
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 };
+  },
 })
 
 export default router

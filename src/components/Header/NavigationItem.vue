@@ -14,7 +14,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 
-const props = defineProps({
+defineProps({
   _link: Object
 })
 

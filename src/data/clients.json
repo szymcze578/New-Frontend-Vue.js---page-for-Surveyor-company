@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Pomiary sytuacyjno-wysokościowe",
+    "description": "Wykonujemy szczegółowe pomiary terenu, które obejmują zarówno jego kształt w planie poziomym (sytuacja), jak i różnice wysokościowe. Pomiary te są niezbędne przy tworzeniu map, projektów budowlanych czy planowaniu zagospodarowania przestrzennego.",
+    "link": "Icons/wysokosc.png"
+  },
+  {
+    "title": "Podziały, wznowienia i rozgraniczenia nieruchomości",
+    "description": "Oferujemy usługi geodezyjne związane z podziałem działek na mniejsze części, odnawianiem granic na podstawie istniejącej dokumentacji geodezyjnej oraz ustalaniem spornych granic między sąsiednimi nieruchomościami w sposób zgodny z przepisami prawa.",
+    "link": "Icons/podzialy.png"
+  },
+  {
+    "title": "Mapy do celów projektowych w formie analogowej i numerycznej",
+    "description": "Przygotowujemy profesjonalne mapy niezbędne do projektowania budynków i innych inwestycji. Mapy mogą być dostarczone w formie tradycyjnej (papierowej) lub numerycznej, co umożliwia ich wykorzystanie w nowoczesnych systemach projektowych.",
+    "link":"Icons/mapy.png"
+  },
+  {
+    "title": "Tyczenia budynków, budowli i sieci uzbrojenia terenu",
+    "description": "Wytyczamy w terenie dokładne lokalizacje planowanych budynków, budowli oraz instalacji infrastruktury technicznej, takich jak sieci kanalizacyjne, gazowe czy elektryczne. Precyzja naszych pomiarów gwarantuje zgodność realizacji z projektem.",
+    "link":"Icons/tyczenie.png"
+  },
+  {
+    "title": "Inwentaryzacje powykonawcze",
+    "description": "Po zakończeniu budowy wykonujemy inwentaryzację, która polega na pomiarze rzeczywistego usytuowania obiektów w terenie i sporządzeniu stosownej dokumentacji geodezyjnej, wymaganej do odbioru inwestycji przez organy administracyjne.",
+    "link":"Icons/inventaryzacja.png"
+  },
+  {
+    "title": "Regulacje stanów prawnych nieruchomości",
+    "description": "Pomagamy w uregulowaniu skomplikowanych kwestii prawnych dotyczących nieruchomości, takich jak ujednolicenie zapisów w księgach wieczystych, czy też uaktualnienie dokumentacji geodezyjnej zgodnie z rzeczywistym stanem nieruchomości.",
+    "link":"Icons/regulacje.png"
+  },
+  {
+    "title": "Kompleksowa obsługa inwestycji",
+    "description": "Zapewniamy pełne wsparcie geodezyjne na każdym etapie inwestycji – od prac przygotowawczych, poprzez realizację budowy, aż po jej zakończenie i odbiór końcowy.",
+    "link":"Icons/obsluga.png"
+  },
+  {
+    "title": "Doradztwo formalno-prawne i techniczne na każdym etapie inwestycji",
+    "description": "Udzielamy fachowych porad w zakresie procedur administracyjnych, wymaganej dokumentacji oraz technicznych aspektów inwestycji, pomagając uniknąć problemów i przyspieszyć proces realizacji.",
+    "link":"Icons/doradztwo.png"
+  },
+  {
+    "title": "Inne nietypowe prace geodezyjne",
+    "description": "Podejmujemy się realizacji nietypowych zadań geodezyjnych dostosowanych do indywidualnych potrzeb klientów, takich jak pomiary do celów artystycznych, sportowych lub związanych z ochroną środowiska.",
+    "link":"Icons/inne.png"
+  }
+]

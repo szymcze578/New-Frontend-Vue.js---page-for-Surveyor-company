@@ -1,16 +1,11 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <!-- Sticky Header -->
     <TheHeader class="sticky top-0"></TheHeader>
-
-    <!-- Main Content -->
-    <RouterView class="flex-grow" v-slot="{ Component }">
+    <RouterView class="flex-grow mb-8" v-slot="{ Component }">
       <Transition name="page-slide" mode="out-in">
         <component :is="Component" />
       </Transition>
     </RouterView>
-
-    <!-- Sticky Footer -->
     <TheFooter class="mt-auto"></TheFooter>
   </div>
 </template>
