@@ -1,6 +1,6 @@
 <template>
   <div
-    class="md:flex justify-between items-center relative bg-white shadow-md h-[100px] lg:px-48 xl:px-20 font-sans subpixel-antialiased font-bold whitespace-nowrap z-10"
+    class="md:flex justify-between items-center relative bg-white shadow-md h-[100px] xl:px-20 font-sans subpixel-antialiased font-bold whitespace-nowrap z-10"
   >
     <div class="flex w-full">
       <div class="text-3xl cursor-pointer">
@@ -10,7 +10,7 @@
           <span class="text-gray-500 text-lg block font-normal">mgr inż. Mariusz Czech</span>
         </RouterLink>
       </div>
-      <div class="flex items-center justify-center">
+      <div class="hidden lg:flex items-center justify-center">
         <div class="flex-row text-gray-500 font-normal mx-20">
           <InfoIconComponent class="!mt-1" icon="pi pi-phone" :data="['602 319 486']"/>
           <InfoIconComponent class="!mt-1" icon="pi pi-send" :data="['geodimetr@op.pl']"/>
@@ -22,7 +22,7 @@
     </div>
 
     <nav
-      class="md:flex md:items-center md:static absolute text-black font-medium cursor-pointer bg-white md:w-auto w-full h-full duration-300 ease-in"
+      class="md:flex md:items-center md:static absolute text-black font-medium cursor-pointer bg-white md:w-auto w-full h-full duration-300 ease-in z-100"
       :class="[isOpen ? 'left-0' : 'left-[-100%]']"
     >
       <NavigationItem v-for="link in links" :key="link.label" :_link="link"> </NavigationItem>

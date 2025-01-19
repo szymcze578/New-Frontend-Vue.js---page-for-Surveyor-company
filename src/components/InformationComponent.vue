@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col p-4 my-8 justify-center items-center">
+  <div class="flex w-full flex-col p-4 my-8 justify-center items-center">
     <div class="font-bold text-xl ">
     </div>
     <div class="text-xl text-justify-center text-center m-8">

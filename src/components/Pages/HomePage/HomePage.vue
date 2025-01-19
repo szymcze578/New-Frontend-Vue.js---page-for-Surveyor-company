@@ -13,9 +13,12 @@
         <CarouselTextInfo class="carousel-text-info top-0 left-0 w-full z-50"/>
       </Swiper>
     </div>
-    <InformationComponent class="lg:px-48 xl:px-96"/>
 
-    <div class="flex flex-col p-4 my-8 justify-center items-center">
+    <div class="w-full flex items-center justify-center">
+      <InformationComponent class="w-full lg:w-[1000px] "/>
+    </div>
+
+    <div class="flex flex-col p-4 justify-center items-center">
       <div class="font-bold text-3xl ">
         Cechują nas
       </div>
@@ -32,8 +35,9 @@
       />
     </div>
 
-    <TechnologiesComponent class="lg:px-48 xl:px-96"/>
-
+    <div class="w-full flex items-center justify-center">
+        <TechnologiesComponent class="w-full lg:w-[1000px]"/>
+    </div>
   </div>
 </template>
 

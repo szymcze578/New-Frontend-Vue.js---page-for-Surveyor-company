@@ -3,20 +3,18 @@
     <div class="mt-8 h-[100px] w-full bg-forth flex z-1000 overflow-hidden">
       <ImageInfoPanel :title="'Dla firm i przedsiębiorstw:'" :image="construction"></ImageInfoPanel>
     </div>
-    <div>
-    <div class="mt-8 w-fit h-fit grid grid-cols-3 gap-x-24 gap-y-9 items-start">
+    <div class="p-4 lg:mt-8 w-full lg:w-fit h-fit grid grid-cols-1 lg:grid-cols-3 gap-x-24 gap-y-9 items-start">
       <ServiceTile
         v-for="(info, index) in companiesOffer"
         :key="index"
         :information="info"
       />
     </div>
-    </div>
     <div class="mt-8 h-[100px] w-full bg-forth flex z-1000 overflow-hidden">
       <ImageInfoPanel :title="'Dla klientów indywidualnych:'" :image="home"></ImageInfoPanel>
     </div>
     <div>
-      <div class="mt-8 w-fit h-fit grid grid-cols-3 gap-x-24 gap-y-9">
+      <div class="p-4 lg:mt-8 w-full lg:w-fit h-fit grid grid-cols-1 lg:grid-cols-3 gap-x-24 gap-y-9">
         <ServiceTile
           v-for="(info, index) in clientsOffer"
           :key="index"
