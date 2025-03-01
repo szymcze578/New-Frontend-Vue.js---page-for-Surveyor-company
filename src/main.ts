@@ -20,6 +20,8 @@ import TheFooter from '@/components/Footer/TheFooter.vue'
 import NavigationItem from '@/components/Header/NavigationItem.vue'
 import InformationTile from '@/components/InformationTile.vue'
 import CarouselTextInfo from '@/components/Pages/HomePage/CarouselTextInfo.vue'
+import AmountCounter from '@/components/Pages/AmountCounter.vue'
+import AboutPage from '@/components/Pages/AboutPage.vue'
 
 const app = createApp(App)
 
@@ -33,6 +35,8 @@ app.component('ContactComponent',ContactComponent)
 app.component('NavigationItem',NavigationItem)
 app.component('InformationTile',InformationTile)
 app.component('CarouselTextInfo',CarouselTextInfo)
+app.component('AboutPage',AboutPage)
+app.component('AmountCounter',AmountCounter)
 
 app.use(VueGoogleMaps, {
   load: {

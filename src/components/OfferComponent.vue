@@ -1,19 +1,17 @@
 <template>
-  <div class="mt-8 mb-8 h-[500px] flex shadow-lg border-t-8 border-second">
+  <div class="mt-8 mb-8 h-[500px] flex">
     <div class="w-[50%] h-full flex justify-center items-center">
-      <div class="w-[75%] h-[75%] ">
-        <img src="/mapa_gminy_zawiercie.jpg">
+      <div class="w-[75%] h-[75%]">
+        <img class="w-full h-full object-contain  " src="/mapa_gminy_zawiercie.jpg">
       </div>
     </div>
     <div class="w-[50%] h-full flex justify-center items-center">
-      <div class="w-[400px] h-full p-4">
+      <div class=" h-full p-4">
         <div class="mb-4 mt-4">
-          <span class="font-bold text-2xl">Nasza oferta!</span>
+          <span class="font-bold text-2xl">Tu działamy!</span>
         </div>
-        <div class="mt-12 text-justify">
-          <div>Firma Geodimetr działa na rynku od wielu lat, specjalizując się w usługach geodezyjnych w województwie śląskim, głównie na terenie powiatu zawierciańskiego. 
-            Oferujemy kompleksową obsługę zarówno dla klientów indywidualnych, jak i przedsiębiorstw, zapewniając precyzyjne pomiary, 
-            doradztwo i realizację projektów na najwyższym poziomie. Dzięki doświadczeniu i zaawansowanym technologiom zdobyliśmy zaufanie szerokiego grona klientów w regionie.</div>
+        <div class="mt-12 text-xl text-justify ">
+          <div>Firma Geodimetr od ponad 15 lat świadczy profesjonalne usługi geodezyjne na terenie województwa śląskiego, koncentrując się przede wszystkim na powiecie zawierciańskim. Obsługujemy zarówno klientów indywidualnych, jak i przedsiębiorstwa, oferując precyzyjne pomiary, fachowe doradztwo oraz realizację projektów na najwyższym poziomie. Nasze doświadczenie oraz nowoczesne technologie pozwoliły nam zyskać zaufanie wielu klientów w regionie..</div>
         </div>
       </div>
     </div>

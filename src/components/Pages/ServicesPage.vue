@@ -13,7 +13,6 @@
     <div class="mt-8 h-[100px] w-full bg-forth flex z-1000 overflow-hidden">
       <ImageInfoPanel :title="'Dla klientów indywidualnych:'" :image="home"></ImageInfoPanel>
     </div>
-    <div>
       <div class="p-4 lg:mt-8 w-full lg:w-fit h-fit grid grid-cols-1 lg:grid-cols-3 gap-x-24 gap-y-9">
         <ServiceTile
           v-for="(info, index) in clientsOffer"
@@ -21,7 +20,6 @@
           :information="info"
         />
       </div>
-    </div>
   </div>
 </template>
 
