@@ -45,7 +45,7 @@
             <button
               class="mt-8 px-4 py-2 bg-first w-fit text-white rounded-2xl hover:bg-second transition-colors duration-300"
               @click="() => goToDestination('/services')">
-              {{'troll button'}}
+              {{'Dowiedz się więcej'}}
             </button>
           </div>
         </div>
