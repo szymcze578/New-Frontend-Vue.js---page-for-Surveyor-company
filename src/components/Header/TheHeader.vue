@@ -25,10 +25,10 @@
     </div>
 
     <nav
-      class="md:flex md:items-center md:static absolute text-black font-medium cursor-pointer bg-white md:w-auto w-full h-full duration-300 ease-in z-100"
+      class="md:flex md:items-center md:static absolute text-black font-medium cursor-pointer bg-white justify-end  md:w-full h-full duration-300 ease-in z-100"
       :class="[isOpen ? 'left-0' : 'left-[-100%]']"
     >
-      <NavigationItem v-for="link in links" :key="link.label" :_link="link"> </NavigationItem>
+      <NavigationItem v-for="link in links" :key="link.label" :_link="link" @close-menu="openMenu()"> </NavigationItem>
     </nav>
   </div>
 </template>
@@ -63,7 +63,5 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
 })
-
-
 
 </script>

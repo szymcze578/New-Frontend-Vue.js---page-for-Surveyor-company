@@ -1,5 +1,8 @@
 <template>
-  <form @submit.prevent="sendEmail" class="mx-auto p-4 m-4 bg-white shadow rounded">
+  <div class="flex text-3xl font-thin  text-gray-500">
+    Napisz do nas
+  </div>
+  <form @submit.prevent="sendEmail" class="mx-auto p-4 m-4 bg-white shadow rounded text-gray-500">
     <div class="mb-4">
       <label class="block mb-1">Imię i nazwisko</label>
       <input v-model="form.name" type="text" class="w-full border px-3 py-2 rounded" required />

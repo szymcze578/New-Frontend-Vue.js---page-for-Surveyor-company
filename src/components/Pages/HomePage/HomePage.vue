@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative flex justify-center py-2  h-[800px]">
+    <div class="relative flex justify-center py-2 h-[800px]">
       <Swiper
         :slides-per-page="1"
         :autoplay="{ delay: 4000, disableOnInteraction: false }"
@@ -23,7 +23,7 @@
         Cechują nas
       </div>
     </div>
-    <div class="lg:px-48 xl:px-90 grid grid-cols-3 gap-6 md:grid-cols-3 mt-8">
+    <div class="lg:px-48 xl:px-90 grid-rows-3 md:grid-rows-none grid gap-6 md:grid-cols-3 mt-8">
       <InformationTile v-for="(info, index) in informationData" :key="index" :information="info"/>
     </div>
 

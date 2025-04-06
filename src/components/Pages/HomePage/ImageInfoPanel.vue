@@ -6,7 +6,7 @@
                visible: { opacity: 1, x: 0, transition: { duration: 1000, easing: 'ease-in-out' } }
               }"  />
   </div>
-  <div class="w-[65%] flex-row justify-center items-center  text-white text-3xl font-semibold text-justify"
+  <div class="w-[65%] flex-row justify-center items-center text-white text-3xl font-semibold text-justify"
        v-motion="{
             initial: { opacity: 0, x: 100 },
             visible: { opacity: 1, x: 0, transition: { duration: 1000, easing: 'ease-in-out'}}
