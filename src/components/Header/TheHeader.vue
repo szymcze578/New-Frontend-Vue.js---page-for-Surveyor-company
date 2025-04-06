@@ -1,11 +1,14 @@
 <template>
   <div
-    class="md:flex justify-between items-center relative bg-white shadow-md h-[100px] xl:px-20 font-sans subpixel-antialiased font-bold whitespace-nowrap z-10"
+    :class="[
+    'md:flex justify-between items-center relative transition-all duration-300 xl:px-20 font-sans subpixel-antialiasing font-bold whitespace-nowrap z-10',
+    isScrolled ? 'bg-white shadow-md h-[60px]' : 'bg-white shadow-md h-[100px]'
+  ]"
   >
     <div class="flex w-full">
       <div class="text-3xl cursor-pointer">
         <RouterLink to="/" class="text-second block">
-          <span class="block">USŁUGI GEODEZYJNE</span>
+          <span v-if="!isScrolled" class="block">USŁUGI GEODEZYJNE</span>
           <span class="text-first">GEO</span><span class="text-second">DIMETR</span>
           <span class="text-gray-500 text-lg block font-normal">mgr inż. Mariusz Czech</span>
         </RouterLink>
@@ -31,7 +34,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import NavigationItem from './NavigationItem.vue'
 import InfoIconComponent from '@/components/ContactComponent/InfoIconComponent.vue'
@@ -43,8 +46,24 @@ const links = ref([
 ])
 
 const isOpen = ref(false)
+const isScrolled = ref(false)
 
 const openMenu = () => {
   isOpen.value = !isOpen.value
 }
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
+
+
 </script>
