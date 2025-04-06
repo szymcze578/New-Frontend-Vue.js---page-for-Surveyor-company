@@ -1,5 +1,7 @@
 <template>
-  <div class="w-[300px] h-[200px] m-4 border-4 shadow-lg rounded-lg border-second font-bold">
+  <div
+    ref="containerRef"
+    class="w-[300px] h-[200px] m-4 border-4 shadow-lg rounded-lg border-second font-bold">
     <div class="flex flex-col h-full items-center justify-center">
       <div class="flex text-6xl text-gray-900 items-center justify-center">
         +{{experience}}
@@ -13,7 +15,7 @@
 
 <script setup lang="ts">
 
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const props = defineProps<{
   title: string,
@@ -22,6 +24,8 @@ const props = defineProps<{
 }>();
 
 const experience = ref(0);
+const containerRef = ref<HTMLElement | null>(null);
+let observer: IntersectionObserver;
 
 function animateCounter(){
   let startTimestamp: number;
@@ -39,7 +43,22 @@ function animateCounter(){
 }
 
 onMounted(() => {
-  animateCounter();
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        animateCounter();
+      }
+    },
+    { threshold: 0.5 }
+  );
+
+  if (containerRef.value) {
+    observer.observe(containerRef.value);
+  }
+});
+
+onBeforeUnmount(() => {
+  if (containerRef.value) observer?.unobserve(containerRef.value);
 });
 
 </script>
