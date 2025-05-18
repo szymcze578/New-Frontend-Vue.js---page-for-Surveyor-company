@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center min-h-screen">
-    <div class="mt-8 h-[100px] w-full bg-forth flex z-1000 overflow-hidden">
-      <ImageInfoPanel :title="'Dla firm i przedsiębiorstw:'" :image="construction"></ImageInfoPanel>
+    <div class="mt-8 w-full bg-forth flex">
+      <ImageHeaderComponent :title="'Dla firm i przedsiębiorstw:'" :image="construction"></ImageHeaderComponent>
     </div>
     <div class="p-4 lg:mt-8 w-full lg:w-fit h-fit grid grid-cols-1 lg:grid-cols-3 gap-x-24 gap-y-9 items-start">
       <ServiceTile
@@ -10,8 +10,8 @@
         :information="info"
       />
     </div>
-    <div class="mt-8 h-[100px] w-full bg-forth flex z-1000 overflow-hidden">
-      <ImageInfoPanel :title="'Dla klientów indywidualnych:'" :image="home"></ImageInfoPanel>
+    <div class="mt-8 w-full bg-forth flex">
+      <ImageHeaderComponent :title="'Dla klientów indywidualnych:'" :image="home"></ImageHeaderComponent>
     </div>
       <div class="p-4 lg:mt-8 w-full lg:w-fit h-fit grid grid-cols-1 lg:grid-cols-3 gap-x-24 gap-y-9">
         <ServiceTile
@@ -37,6 +37,7 @@ const clientsOffer = ref<InformationData[]>(mapInformationData(clientsOfferData)
 const companiesOffer = ref<InformationData[]>(companiesOfferData)
 import construction from "@/assets/construction.jpg"
 import home from "@/assets/home.jpg"
+import ImageHeaderComponent from '@/components/ImageHeaderComponent.vue'
 
 </script>
 

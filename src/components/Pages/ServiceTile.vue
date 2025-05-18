@@ -1,9 +1,8 @@
 <template>
   <div
-    class="flex lg:flex-col flex-row w-full lg:w-[300px] h-fit lg:h-[250px] text-justify rounded-lg shadow-lg items-center border-4 border-second hover:border-8 hover:border-first transition-all"
-    @pointerenter="showDescription=true"
-    @pointerleave="showDescription=false"
-    :class="{ '!h-full': showDescription }"
+    class="flex lg:flex-col flex-row w-full lg:w-[300px] h-fit lg:h-[250px] text-justify rounded-lg shadow-lg items-center border-4 border-second transition-all cursor-pointer"
+    @mousedown="toggleDescription()"
+    :class="{ '!h-full !border-first !border-8': showDescription }"
   >
     <div class="m-3 w-[75px]">
       <img :src="information.link" :alt="information.title" class="object-cover" />

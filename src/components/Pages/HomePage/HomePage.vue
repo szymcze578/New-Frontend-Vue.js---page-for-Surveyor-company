@@ -27,7 +27,7 @@
       <InformationTile v-for="(info, index) in informationData" :key="index" :information="info"/>
     </div>
 
-    <div class="mt-8 h-[500px] bg-forth flex z-1000 overflow-hidden">
+    <div class="mt-8 h-auto md:h-[400px] bg-forth flex z-1000">
       <ImageInfoPanel
       :image="image"
       :title="'Nasza oferta'"
