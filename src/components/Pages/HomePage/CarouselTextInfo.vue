@@ -48,21 +48,10 @@ import contactInfoJson from "@/data/contactInfo.json";
 import type { ContactData } from "@/Model/ContactData";
 import {ref} from 'vue'
 
-
 const lines_done = ref([false, false, false,false]);
 
 const contactInfoData: ContactData = contactInfoJson;
 
-for (const key in contactInfoData) {
-  if (Object.prototype.hasOwnProperty.call(contactInfoData, key)) {
-    const contactInfo = contactInfoData[key];
-    console.log(`Key: ${key}`);
-    console.log(`Icon: ${contactInfo.icon}`);
-    contactInfo.data.forEach((value) => {
-      console.log(`Data: ${value}`);
-    });
-  }
-}
 </script>
 
 <style scoped>

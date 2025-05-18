@@ -19,21 +19,5 @@
 </template>
 
 <script setup lang="ts">
-import type { ContactData } from '@/Model/ContactData'
-import contactInfoJson from '@/data/contactInfo.json'
 
-const contactInfoData: ContactData = contactInfoJson
-
-function print(){
-for (const key in contactInfoData) {
-  if (Object.prototype.hasOwnProperty.call(contactInfoData, key)) {
-    const contactInfo = contactInfoData[key]
-    console.log(`Key: ${key}`)
-    console.log(`Icon: ${contactInfo.icon}`)
-    contactInfo.data.forEach((value) => {
-      console.log(`Data: ${value}`)
-    })
-  }
-}
-}
 </script>
