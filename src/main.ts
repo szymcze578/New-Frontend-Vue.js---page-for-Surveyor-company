@@ -40,7 +40,7 @@ app.component('AmountCounter',AmountCounter)
 
 app.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyA2SX3BVRyGN78FILocK0Vc-shuj8hTU-s'
+    key: import.meta.env.VITE_GOOGLE_API_KEY
   }
 })
 

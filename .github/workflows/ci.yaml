@@ -32,3 +32,4 @@ jobs:
       - run: railway up --service=prolific-wonder
     env:
       RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+      GOOGLE_API_KEY: ${{ secrets.VITE_GOOGLE_API_KEY }}
