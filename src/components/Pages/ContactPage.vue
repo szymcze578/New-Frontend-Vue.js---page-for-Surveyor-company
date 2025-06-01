@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="flex  w-full h-[300px]">
+    <img src="/Biuro.png" alt="Biuro"  class="jusify-center items-ceter object-cover"/>
+    </div>
     <div class="lg:px-48 xl:px-96">
       <ContactComponent />
     </div>

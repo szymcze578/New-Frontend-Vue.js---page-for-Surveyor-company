@@ -44,6 +44,12 @@ app.use(VueGoogleMaps, {
   }
 })
 
+router.afterEach((to) => {
+  const defaultTitle = "Geodeta Zawiercie";
+  const title = (to.meta.title as string) || defaultTitle;
+  document.title = title || defaultTitle;
+  });
+
 app.use(createPinia())
 app.use(router)
 app.use(MotionPlugin)
