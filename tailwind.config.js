@@ -11,7 +11,8 @@ export default {
         first: '#F78C6A',
         second: '#108AB1',
         third: '#073A4B',
-        forth: '#1F2937'
+        forth: '#1F2937',
+        test: '#eae2b7'
       }
     }
   },

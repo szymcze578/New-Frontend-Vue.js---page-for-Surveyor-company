@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative flex justify-center py-2 h-[800px]">
+    <div class="relative flex justify-center h-[800px]">
       <Swiper
         :slides-per-page="1"
         :autoplay="{ delay: 4000, disableOnInteraction: false }"

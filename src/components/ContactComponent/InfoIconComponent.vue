@@ -1,6 +1,6 @@
 <template>
   <div class="flex mt-4">
-    <div class="w-fit items-center mr-3 flex justify-center">
+    <div v-if=icon class="w-fit items-center mr-3 flex justify-center">
       <span :class="icon"></span>
     </div>
     <div class="w-full">
@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 defineProps<{
-  icon: string
+  icon?: string
   data: string[]
 }>()
 </script>

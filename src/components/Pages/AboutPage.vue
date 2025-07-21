@@ -1,16 +1,5 @@
 <template>
   <div>
-    <OfferComponent class="lg:px-48 xl:px-90"> </OfferComponent>
-    <MediaTextComponent
-      :content="experienceText"
-      :direction="Direction.LEFT"
-      :header="experienceTitle"
-      :enable-button="false"/>
-    <div class="m-8 flex items-center justify-center">
-      <AmountCounter title="Lat doświadczenia" :target="30" :duration="1000" />
-      <AmountCounter title="Zrealizowanych zleceń" :target="1000" :duration="1400" />
-      <AmountCounter title="Zadowolonych klientów" :target="1000" :duration="1800" />
-    </div>
     <MediaTextComponent
       :content="offerText"
       :direction="Direction.RIGHT"
@@ -19,6 +8,16 @@
       link="/services"
       button-text="Dowiedz się więcej"
     />
+    <div class="m-8 flex items-center justify-center">
+      <AmountCounter title="Lat doświadczenia" :target="30" :duration="1000" />
+      <AmountCounter title="Zrealizowanych zleceń" :target="1000" :duration="1400" />
+      <AmountCounter title="Zadowolonych klientów" :target="1000" :duration="1800" />
+    </div>
+    <MediaTextComponent
+      :content="experienceText"
+      :direction="Direction.LEFT"
+      :header="experienceTitle"
+      :enable-button="false"/>
   </div>
 </template>
 

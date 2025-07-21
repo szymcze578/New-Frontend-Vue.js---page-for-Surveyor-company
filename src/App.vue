@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <TheHeader class="sticky top-0"></TheHeader>
+    <TheHeader></TheHeader>
     <RouterView class="flex-grow mb-8" v-slot="{ Component }">
       <Transition name="page-slide" mode="out-in">
         <component :is="Component" />

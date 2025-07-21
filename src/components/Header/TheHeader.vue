@@ -1,36 +1,39 @@
 <template>
-  <div
-    :class="[
-    'md:flex justify-between items-center relative transition-all duration-300 xl:px-20 font-sans subpixel-antialiasing font-bold whitespace-nowrap z-10',
-    isScrolled ? 'bg-white shadow-md h-[60px]' : 'bg-white shadow-md h-[100px]'
-  ]"
-  >
-    <div class="flex w-full">
-      <div class="text-3xl cursor-pointer">
-        <RouterLink to="/" class="text-second block">
-          <span v-if="!isScrolled" class="block">USŁUGI GEODEZYJNE</span>
-          <span class="text-first">GEO</span><span class="text-second">DIMETR</span>
-          <span class="text-gray-500 text-lg block font-normal">mgr inż. Mariusz Czech</span>
-        </RouterLink>
-      </div>
-      <div class="hidden lg:flex items-center justify-center">
-        <div class="flex-row text-gray-500 font-normal mx-20">
-          <InfoIconComponent class="!mt-1" icon="pi pi-phone" :data="['602 319 486']"/>
-          <InfoIconComponent class="!mt-1" icon="pi pi-send" :data="['geodimetr@op.pl']"/>
+  <div class="sticky top-0 z-[999] pb-2 bg-gradient-to-r from-first to-second">
+    <div
+      class="md:flex justify-between bg-white items-center relative transition-all duration-300 xl:px-20 font-sans subpixel-antialiasing font-bold whitespace-nowrap"
+    >
+      <div class="flex w-full">
+        <div class="text-3xl cursor-pointer">
+          <RouterLink to="/" class="text-second block transition-all duration-500">
+            <img v-if="!isScrolled" src="/LOGO_LARGE_WB.png">
+            <img v-if="isScrolled" src="/LOGO_SMALL2.png">
+          </RouterLink>
+        </div>
+        <div class="hidden lg:flex items-center justify-center">
+          <div class="flex-row text-gray-500 font-normal mx-20">
+            <InfoIconComponent class="!mt-1" icon="pi pi-phone" :data="['602 319 486']"/>
+            <InfoIconComponent class="!mt-1" icon="pi pi-send" :data="['geodimetr@op.pl']"/>
+          </div>
+        </div>
+        <div class="md:hidden text-4xl absolute text-black right-6 top-7 cursor-pointer">
+          <i :class="[isOpen ? 'bi bi-x' : 'bi bi-list']" @click="openMenu()"></i>
         </div>
       </div>
-    </div>
-    <div class="md:hidden text-4xl absolute text-black right-6 top-7 cursor-pointer">
-      <i :class="[isOpen ? 'bi bi-x' : 'bi bi-list']" @click="openMenu()"></i>
+
+      <nav
+        class="md:flex md:items-center md:static absolute text-black font-medium cursor-pointer justify-end duration-300 ease-in z-100"
+        :class="[isOpen ? 'left-0' : 'left-[-100%]']"
+      >
+        <NavigationItem v-for="link in links" :key="link.label" :_link="link" @close-menu="openMenu()"> </NavigationItem>
+      </nav>
+
     </div>
 
-    <nav
-      class="md:flex md:items-center md:static absolute text-black font-medium cursor-pointer bg-white justify-end  md:w-full h-full duration-300 ease-in z-100"
-      :class="[isOpen ? 'left-0' : 'left-[-100%]']"
-    >
-      <NavigationItem v-for="link in links" :key="link.label" :_link="link" @close-menu="openMenu()"> </NavigationItem>
-    </nav>
+
   </div>
+
+
 </template>
 
 <script setup lang="ts">
@@ -53,7 +56,7 @@ const openMenu = () => {
 }
 
 const handleScroll = () => {
-  isScrolled.value = window.scrollY > 50
+  isScrolled.value = window.scrollY > 150
 }
 
 onMounted(() => {
@@ -65,3 +68,6 @@ onBeforeUnmount(() => {
 })
 
 </script>
+
+<style scoped>
+</style>

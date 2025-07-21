@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col md:flex-row h-full w-full">
+  <div class="flex flex-col md:flex-row h-full w-full overflow-hidden">
     <div class="hidden md:flex md:w-[35%] md:h-auto">
       <img
         :src="image"
