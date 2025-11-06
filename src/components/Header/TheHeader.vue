@@ -16,24 +16,25 @@
             <InfoIconComponent class="!mt-1" icon="pi pi-send" :data="['geodimetr@op.pl']"/>
           </div>
         </div>
-        <div class="md:hidden text-4xl absolute text-black right-6 top-7 cursor-pointer">
-          <i :class="[isOpen ? 'bi bi-x' : 'bi bi-list']" @click="openMenu()"></i>
+        <div class="md:hidden flex text-4xl text-black cursor-pointer items-center">
+          <i :class="[isOpen ? 'bi bi-x' : 'bi bi-list']" @click="toggleMobileNavigationMenu"/>
         </div>
       </div>
 
       <nav
-        class="md:flex md:items-center md:static absolute text-black font-medium cursor-pointer justify-end duration-300 ease-in z-100"
-        :class="[isOpen ? 'left-0' : 'left-[-100%]']"
+        class="hidden md:flex md:items-center md:static absolute text-black font-medium cursor-pointer bg-white justify-end md:w-full h-full"
       >
-        <NavigationItem v-for="link in links" :key="link.label" :_link="link" @close-menu="openMenu()"> </NavigationItem>
+        <NavigationItem v-for="link in links" :key="link.label" :link="link" @close-menu="toggleMobileNavigationMenu"/>
       </nav>
 
     </div>
-
+    <MobileNavigation
+      :links="links"
+      :isOpen="isOpen"
+      @close="toggleMobileNavigationMenu"
+    />
 
   </div>
-
-
 </template>
 
 <script setup lang="ts">
@@ -51,11 +52,11 @@ const links = ref([
 const isOpen = ref(false)
 const isScrolled = ref(false)
 
-const openMenu = () => {
+function toggleMobileNavigationMenu(){
   isOpen.value = !isOpen.value
 }
 
-const handleScroll = () => {
+function handleScroll() {
   isScrolled.value = window.scrollY > 150
 }
 
@@ -68,6 +69,3 @@ onBeforeUnmount(() => {
 })
 
 </script>
-
-<style scoped>
-</style>

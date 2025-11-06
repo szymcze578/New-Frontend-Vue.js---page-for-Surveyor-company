@@ -1,12 +1,12 @@
 <template>
   <div
     ref="containerRef"
-    class="w-[300px] h-[200px] m-4 border-4 shadow-lg rounded-lg border-second font-bold">
+    class="md:w-[300px] h-[200px] m-4 border-4 shadow-lg rounded-lg border-second font-bold">
     <div class="flex flex-col h-full items-center justify-center">
-      <div class="flex text-6xl text-gray-900 items-center justify-center">
+      <div class="flex text-4xl md:text-6xl text-gray-900 items-center justify-center">
         +{{experience}}
       </div>
-      <div class="flex items-center text-lg justify-center">
+      <div class="flex items-center text-center text-sm  md:text-lg justify-center">
         {{title}}
       </div>
     </div>

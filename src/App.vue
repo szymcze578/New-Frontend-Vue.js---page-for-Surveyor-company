@@ -6,7 +6,7 @@
         <component :is="Component" />
       </Transition>
     </RouterView>
-    <TheFooter class="mt-auto"></TheFooter>
+    <TheFooter class="mt-auto"/>
   </div>
 </template>
 
