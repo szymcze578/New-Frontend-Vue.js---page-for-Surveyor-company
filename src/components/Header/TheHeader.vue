@@ -3,7 +3,7 @@
     <div
       class="md:flex justify-between bg-white items-center relative transition-all duration-300 xl:px-20 font-sans subpixel-antialiasing font-bold whitespace-nowrap"
     >
-      <div class="flex w-full">
+      <div class="flex w-full justify-between">
         <div class="text-3xl cursor-pointer">
           <RouterLink to="/" class="text-second block transition-all duration-500">
             <img v-if="!isScrolled" src="/LOGO_LARGE_WB.png">
@@ -33,7 +33,6 @@
       :isOpen="isOpen"
       @close="toggleMobileNavigationMenu"
     />
-
   </div>
 </template>
 
@@ -42,6 +41,7 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import NavigationItem from './NavigationItem.vue'
 import InfoIconComponent from '@/components/ContactComponent/InfoIconComponent.vue'
+import MobileNavigation from '@/components/Pages/HomePage/MobileNavigation.vue'
 
 const links = ref([
   { label: 'Oferta', path: '/services' },
