@@ -27,8 +27,8 @@ jobs:
       - name: Deploy App to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ variables.PROD_FTP_SERVER }}
-          username: ${{ variables.PROD_USER }}
-          password: ${{ variables.PROD_PASSWORD }}
-          server-dir: ${{ variables.PROD_TARGET_DIR }}
+          server: ${{ vars.PROD_FTP_SERVER }}
+          username: ${{ vars.PROD_USER }}
+          password: ${{ vars.PROD_PASSWORD }}
+          server-dir: ${{ vars.PROD_TARGET_DIR }}
           local-dir: dist/
