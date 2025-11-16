@@ -1,0 +1,34 @@
+name: Production deployment
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build vue.js app
+        run: npm run build --if-present
+
+      - name: Deploy App to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ variables.PROD_FTP_SERVER }}
+          username: ${{ variables.PROD_USER }}
+          password: ${{ variables.PROD_PASSWORD }}
+          server-dir: ${{ variables.PROD_TARGET_DIR }}
+          local-dir: dist/
