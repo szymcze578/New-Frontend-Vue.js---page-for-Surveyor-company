@@ -19,16 +19,10 @@
       </div>
     </div>
 
-    <div class="container flex flex-col md:flex-row justify-around mx-auto items-center w-full  py-8">
-      <div class="flex-1 mb-4 max-w-sm">
+    <div class="container flex flex-col md:flex-row justify-around mx-auto items-center w-full">
+      <div class="flex-1 max-w-sm">
         <h3 class="text-lg font-semibold">GEODIMETR</h3>
         <p>&copy; 2024 Usługi Geodezyjne GEODIMETR mgr inż. Mariusz Czech</p>
-      </div>
-
-      <div class="flex-1 text-3xl max-w-sm">
-        <a :href="companyLink" target="_blank" rel="noopener noreferrer">
-          <span class="pi pi-facebook hover:text-second hover:cursor-pointer"></span>
-        </a>
       </div>
     </div>
 
@@ -40,7 +34,6 @@ import {ref} from 'vue'
 import DataList from '@/components/Footer/DataList.vue'
 
 const companyLink = "https://www.facebook.com/profile.php?id=100069162198575"
-const authorLink = "https://www.facebook.com/szymon.czech.31"
 
 
 const contactInfo = ref(["Usługi geodezyjne GEODIMETR","42-400 Zawiercie","ul. Sienkiewicza 36"])

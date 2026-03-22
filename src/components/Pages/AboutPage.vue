@@ -23,6 +23,7 @@
       :direction="Direction.RIGHT"
       :header="offerTitle"
       :enable-button="true"
+      :image="'/pointing-sketch.jpg'"
       link="/services"
       button-text="Dowiedz się więcej"
     />
