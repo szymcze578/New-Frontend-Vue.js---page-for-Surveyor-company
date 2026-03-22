@@ -37,6 +37,6 @@ const companyLink = "https://www.facebook.com/profile.php?id=100069162198575"
 
 
 const contactInfo = ref(["Usługi geodezyjne GEODIMETR","42-400 Zawiercie","ul. Sienkiewicza 36"])
-const paymentInfo = ref(["NIP: 6491299513", "KRS: 1231321239", "REGON: 123123123"])
+const paymentInfo = ref(["NIP: 6491299513"])
 
 </script>
