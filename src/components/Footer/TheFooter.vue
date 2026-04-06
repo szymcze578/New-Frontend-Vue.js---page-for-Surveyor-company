@@ -1,42 +1,144 @@
 <template>
-  <div
-    class="flex flex-col justify-between bg-third text-white py-8 border-t-8 border-first "
-  >
-    <div class="container flex flex-col md:flex-row justify-around items-start mx-auto w-full">
-      <div class="flex-1 max-w-sm">
-        <h4 class="text-xl font-semibold mb-2">O nas</h4>
-        <p>
-          GEODIMETR to firma oferująca kompleksowe usługi geodezyjne, działająca z pasją i profesjonalizmem od wielu lat.
-        </p>
-      </div>
+  <footer class="bg-primary text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
-      <div class="flex-1 max-w-sm">
-        <h4 class="text-xl font-semibold mb-2">Dane firmy</h4>
-        <DataList
-          :data="contactInfo"/>
-        <DataList
-          :data="paymentInfo"/>
+        <!-- Company Info -->
+        <div>
+          <div class="flex flex-col mb-6">
+            <span class="text-2xl font-bold tracking-tight">
+              <span class="text-accent">GEO</span>DIMETR
+            </span>
+            <span class="text-sm text-gray-400">mgr inż. Mariusz Czech</span>
+          </div>
+          <p class="text-gray-300 text-sm leading-relaxed mb-6">
+            Profesjonalne usługi geodezyjne z pasją i precyzją. Obsługujemy klientów indywidualnych, deweloperów i firmy budowlane.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              v-for="social in socials"
+              :key="social.label"
+              :href="social.href"
+              :aria-label="social.label"
+              class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
+            >
+              <component :is="social.icon" class="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-bold mb-6">Szybkie linki</h3>
+          <ul class="space-y-3">
+            <li v-for="link in quickLinks" :key="link.id">
+              <button
+                class="text-gray-300 hover:text-accent transition-colors text-sm"
+                @click="scrollToSection(link.id)"
+              >
+                {{ link.label }}
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-lg font-bold mb-6">Usługi</h3>
+          <ul class="space-y-3">
+            <li
+              v-for="service in services"
+              :key="service"
+              class="text-gray-300 text-sm"
+            >
+              {{ service }}
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h3 class="text-lg font-bold mb-6">Kontakt</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <MapPin class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5" />
+              <span class="text-gray-300 text-sm">Zawiercie, woj. śląskie</span>
+            </li>
+            <li class="flex items-start">
+              <Phone class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5" />
+              <a
+                href="tel:+48123456789"
+                class="text-gray-300 text-sm hover:text-accent transition-colors"
+              >
+                +48 602 319 486
+              </a>
+            </li>
+            <li class="flex items-start">
+              <Mail class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5" />
+              <a
+                href="mailto:kontakt@geodimetr.pl"
+                class="text-gray-300 text-sm hover:text-accent transition-colors"
+              >
+                geodimetr@op.pl
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="pt-8 border-t border-white/10">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p class="text-gray-400 text-sm">
+            © 2026 Geodimetr. Wszelkie prawa zastrzeżone.
+          </p>
+          <div class="flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-accent text-sm transition-colors">
+              Polityka prywatności
+            </a>
+            <a href="#" class="text-gray-400 hover:text-accent text-sm transition-colors">
+              Regulamin
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="container flex flex-col md:flex-row justify-around mx-auto items-center w-full">
-      <div class="flex-1 max-w-sm">
-        <h3 class="text-lg font-semibold">GEODIMETR</h3>
-        <p>&copy; 2024 Usługi Geodezyjne GEODIMETR mgr inż. Mariusz Czech</p>
-      </div>
-    </div>
-
-  </div>
+  </footer>
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
-import DataList from '@/components/Footer/DataList.vue'
+import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin } from 'lucide-vue-next';
 
-const companyLink = "https://www.facebook.com/profile.php?id=100069162198575"
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const offset = 80;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - offset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    });
+  }
+};
 
+const quickLinks = [
+  { id: 'home', label: 'Start' },
+  { id: 'services', label: 'Usługi' },
+  { id: 'projects', label: 'Realizacje' },
+  { id: 'testimonials', label: 'Opinie' },
+  { id: 'faq', label: 'FAQ' },
+];
 
-const contactInfo = ref(["Usługi geodezyjne GEODIMETR","42-400 Zawiercie","ul. Sienkiewicza 36"])
-const paymentInfo = ref(["NIP: 6491299513"])
+const services = [
+  'Mapy do celów projektowych',
+  'Podziały nieruchomości',
+  'Wznowienie granic',
+  'Wytyczenie obiektów',
+  'Pomiary dronem',
+];
 
+const socials = [
+  { label: 'Facebook', icon: Facebook, href: '#' },
+  { label: 'Instagram', icon: Instagram, href: '#' },
+  { label: 'LinkedIn', icon: Linkedin, href: '#' },
+];
 </script>
