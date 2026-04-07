@@ -8,21 +8,16 @@
           v-motion
           :initial="{ opacity: 0, y: 20 }"
           :visible-once="{ opacity: 1, y: 0, transition: { duration: 500, delay: index * 100 } }"
-          class="relative group bg-white rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2 border-transparent hover:border-accent/20"
+          class="stat-card group bg-white rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2 border-transparent hover:border-accent/20"
         >
-          <!-- Gradient background -->
-          <div class="absolute inset-0 bg-gradient-to-br from-accent/5 to-secondary/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity" />
-
-          <div class="relative">
-            <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent to-accent/80 rounded-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-accent/20">
-              <component :is="stat.icon" class="w-7 h-7 text-white" />
-            </div>
-            <div class="text-4xl font-bold bg-gradient-to-br from-primary to-secondary bg-clip-text text-transparent mb-2">
-              {{ stat.value }}
-            </div>
-            <div class="text-base font-semibold text-foreground mb-1">{{ stat.label }}</div>
-            <div class="text-sm text-muted-foreground">{{ stat.description }}</div>
+          <div class="flex items-center justify-center size-16 bg-linear-to-br from-accent to-accent/80 rounded-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-accent/20">
+            <component :is="stat.icon" class="size-7 text-white" />
           </div>
+          <div class="text-4xl font-bold bg-linear-to-br from-primary to-secondary bg-clip-text text-transparent mb-2">
+            {{ stat.value }}
+          </div>
+          <div class="text-base font-semibold text-foreground mb-1">{{ stat.label }}</div>
+          <div class="text-sm text-muted-foreground">{{ stat.description }}</div>
         </div>
       </div>
     </div>
@@ -67,3 +62,23 @@ const stats: Stat[] = [
   },
 ]
 </script>
+
+<style scoped>
+.stat-card {
+  position: relative;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(to bottom right, color-mix(in srgb, var(--color-accent) 5%, transparent), color-mix(in srgb, var(--color-secondary) 5%, transparent));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+</style>

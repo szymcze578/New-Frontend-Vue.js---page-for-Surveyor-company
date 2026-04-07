@@ -15,8 +15,8 @@
 </template>
 
 <script setup lang="ts">
-import TheHeader from './components/Header/TheHeader.vue'
-import TheFooter from './components/Footer/TheFooter.vue'
+import TheHeader from './components/TheHeader.vue'
+import TheFooter from './components/TheFooter.vue'
 import TheFAQ from './components/TheFAQ.vue';
 import TrustCards from './components/TrustCards.vue';
 import Advantages from './components/Advantages.vue';
