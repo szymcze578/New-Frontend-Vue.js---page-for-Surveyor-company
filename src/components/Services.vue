@@ -105,7 +105,7 @@ const services: Service[] = [
     icon: Ruler,
     title: 'Pomiary sytuacyjno-wysokościowe',
     description: 'Szczegółowe pomiary terenu dla celów projektowych i inwentaryzacyjnych.',
-    features: ['Pomiar niwelacyjny', 'Tachimetria', 'Fotogrametria dronem'],
+    features: ['Pomiar niwelacyjny', 'Tachimetria'],
   },
   {
     icon: TrendingUp,

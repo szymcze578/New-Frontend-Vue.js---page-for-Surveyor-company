@@ -36,7 +36,7 @@
           >
             <span class="font-semibold text-primary pr-8">{{ faq.question }}</span>
             <ChevronDown
-              class="w-5 h-5 text-accent flex-shrink-0 transition-transform duration-300"
+              class="w-5 h-5 text-accent shrink-0 transition-transform duration-300"
               :class="{ 'rotate-180': openIndex === index }"
             />
           </button>
@@ -101,10 +101,6 @@ const faqs = [
   {
     question: 'Co to jest wznowienie znaków granicznych?',
     answer: 'Wznowienie to usługa polegająca na odtworzeniu i utrwaleniu granic działki na gruncie. Wykonuje się ją na podstawie danych z ewidencji gruntów. Dzięki temu dokładnie wiesz, gdzie przebiega granica Twojej nieruchomości.',
-  },
-  {
-    question: 'Czy wykonujecie pomiary dronem?',
-    answer: 'Tak, dysponujemy licencjonowanym dronem do pomiarów fotogrametrycznych. Ta technologia pozwala na szybkie i precyzyjne pomiary większych obszarów, szczególnie trudnodostępnych.',
   },
   {
     question: 'Jak wygląda proces podziału działki?',

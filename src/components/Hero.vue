@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary via-[#0a4f65] to-secondary">
+  <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-linear-to-br from-primary via-[#0a4f65] to-secondary">
 
     <!-- Topographic background pattern -->
     <div class="absolute inset-0 opacity-[0.07]">

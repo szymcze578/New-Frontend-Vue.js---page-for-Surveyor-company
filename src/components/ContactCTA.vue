@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="py-24 bg-gradient-to-br from-primary via-[#0a4f65] to-secondary relative overflow-hidden">
+  <section id="contact" class="py-24 bg-linear-to-br from-primary via-[#0a4f65] to-secondary relative overflow-hidden">
 
     <!-- Background pattern -->
     <div

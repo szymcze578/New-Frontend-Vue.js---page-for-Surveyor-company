@@ -74,7 +74,7 @@ const advantages: Advantage[] = [
   {
     icon: BadgeCheck,
     title: 'Uprawnienia i certyfikaty',
-    description: 'Posiadamy pełne uprawnienia zawodowe i ubezpieczenie OC.',
+    description: 'Posiadamy pełne uprawnienia zawodowe i wymagane certifikaty.',
   },
   {
     icon: Zap,
