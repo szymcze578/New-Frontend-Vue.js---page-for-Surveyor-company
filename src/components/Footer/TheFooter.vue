@@ -56,7 +56,10 @@
           <ul class="space-y-4">
             <li class="flex items-start">
               <MapPin class="w-5 h-5 text-accent mr-3 shrink-0 mt-0.5" />
-              <span class="text-gray-300 text-sm">Zawiercie, woj. śląskie</span>
+                <div className="text-gray-300 text-sm">
+                  <div>ul. Sienkiewicza 36</div>
+                  <div>Zawiercie, woj. śląskie</div>
+                </div>
             </li>
             <li class="flex items-start">
               <Phone class="w-5 h-5 text-accent mr-3 shrink-0 mt-0.5" />
