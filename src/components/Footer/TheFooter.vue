@@ -26,7 +26,6 @@
             </a>
           </div>
         </div>
-
         <div>
           <h3 class="text-lg font-bold mb-6">Szybkie linki</h3>
           <ul class="space-y-3">
@@ -40,8 +39,6 @@
             </li>
           </ul>
         </div>
-
-        <!-- Services -->
         <div>
           <h3 class="text-lg font-bold mb-6">Usługi</h3>
           <ul class="space-y-3">
@@ -54,17 +51,15 @@
             </li>
           </ul>
         </div>
-
-        <!-- Contact -->
         <div>
           <h3 class="text-lg font-bold mb-6">Kontakt</h3>
           <ul class="space-y-4">
             <li class="flex items-start">
-              <MapPin class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5" />
+              <MapPin class="w-5 h-5 text-accent mr-3 shrink-0 mt-0.5" />
               <span class="text-gray-300 text-sm">Zawiercie, woj. śląskie</span>
             </li>
             <li class="flex items-start">
-              <Phone class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5" />
+              <Phone class="w-5 h-5 text-accent mr-3 shrink-0 mt-0.5" />
               <a
                 href="tel:+48123456789"
                 class="text-gray-300 text-sm hover:text-accent transition-colors"
@@ -73,7 +68,7 @@
               </a>
             </li>
             <li class="flex items-start">
-              <Mail class="w-5 h-5 text-accent mr-3 flex-shrink-0 mt-0.5" />
+              <Mail class="w-5 h-5 text-accent mr-3 shrink-0 mt-0.5" />
               <a
                 href="mailto:kontakt@geodimetr.pl"
                 class="text-gray-300 text-sm hover:text-accent transition-colors"
@@ -83,7 +78,6 @@
             </li>
           </ul>
         </div>
-
       </div>
       <div class="pt-8 border-t border-white/10">
         <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
@@ -133,7 +127,6 @@ const services = [
   'Podziały nieruchomości',
   'Wznowienie granic',
   'Wytyczenie obiektów',
-  'Pomiary dronem',
 ];
 
 const socials = [
