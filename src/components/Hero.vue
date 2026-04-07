@@ -1,29 +1,3 @@
-<script setup lang="ts">
-import { ArrowRight, MapPin } from 'lucide-vue-next'
-
-const scrollToSection = (id: string) => {
-  const element = document.getElementById(id)
-  if (element) {
-    const offset = 80
-    const elementPosition = element.getBoundingClientRect().top
-    const offsetPosition = elementPosition + window.pageYOffset - offset
-    window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-  }
-}
-
-const trustStats = [
-  { value: '15+', label: 'Lat doświadczenia' },
-  { value: '500+', label: 'Projektów' },
-  { value: '100%', label: 'Zadowolenie' },
-]
-
-const imgSrc = 'https://images.unsplash.com/photo-1661945072487-bf771c03851c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXlvciUyMGdlb2RldGljJTIwZXF1aXBtZW50JTIwcHJlY2lzaW9uJTIwbWVhc3VyZW1lbnR8ZW58MXx8fHwxNzc1NTQ4MzExfDA&ixlib=rb-4.1.0&q=80&w=1080'
-
-const onImgError = (e: Event) => {
-  (e.target as HTMLImageElement).style.display = 'none'
-}
-</script>
-
 <template>
   <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary via-[#0a4f65] to-secondary">
 
@@ -99,14 +73,14 @@ const onImgError = (e: Event) => {
             class="flex flex-col sm:flex-row gap-4"
           >
             <button
-              class="inline-flex items-center justify-center px-8 py-4 rounded-md text-base font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 transition-colors"
+              class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 transition-colors"
               @click="scrollToSection('contact')"
             >
               Bezpłatna wycena
               <ArrowRight class="ml-2 w-5 h-5" />
             </button>
             <button
-              class="inline-flex items-center justify-center px-8 py-4 rounded-md text-base font-semibold border-2 border-white text-white hover:bg-white/10 transition-colors"
+              class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold border-2 border-white text-white hover:bg-white/10 transition-colors"
               @click="scrollToSection('services')"
             >
               Nasze usługi
@@ -170,6 +144,32 @@ const onImgError = (e: Event) => {
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+import { ArrowRight, MapPin } from 'lucide-vue-next'
+
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id)
+  if (element) {
+    const offset = 80
+    const elementPosition = element.getBoundingClientRect().top
+    const offsetPosition = elementPosition + window.pageYOffset - offset
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+  }
+}
+
+const trustStats = [
+  { value: '15+', label: 'Lat doświadczenia' },
+  { value: '500+', label: 'Projektów' },
+  { value: '100%', label: 'Zadowolenie' },
+]
+
+const imgSrc = 'https://images.unsplash.com/photo-1661945072487-bf771c03851c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXlvciUyMGdlb2RldGljJTIwZXF1aXBtZW50JTIwcHJlY2lzaW9uJTIwbWVhc3VyZW1lbnR8ZW58MXx8fHwxNzc1NTQ4MzExfDA&ixlib=rb-4.1.0&q=80&w=1080'
+
+const onImgError = (e: Event) => {
+  (e.target as HTMLImageElement).style.display = 'none'
+}
+</script>
 
 <style scoped>
 @keyframes float-up {
