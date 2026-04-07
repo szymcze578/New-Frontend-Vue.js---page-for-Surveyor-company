@@ -1,85 +1,152 @@
 <template>
-  <div class="sticky top-0 z-[999] pb-2 bg-gradient-to-r from-first to-second">
-    <div
-      class="md:flex justify-between bg-white items-center relative transition-all duration-500 xl:px-20 font-sans subpixel-antialiasing font-bold whitespace-nowrap"
-      :style="{ height: isScrolled ? '70px' : '120px' }"
-    > 
-      <div class="flex">
-        <div class="flex w-full gap-4 items-center">
-        <div class="cursor-pointer overflow-hidden w-[360px]">
-          <RouterLink 
-            to="/" 
-            class="transition-all duration-500 h-full flex items-center"
-          >
-            <img 
-              src="/LOGO_LARGE_WB.png"
-              class="w-[360px] h-[120px] transition-all duration-500 object-contain"
-              :style="{ opacity: isScrolled ? '0' : '1' }"
+  <header
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    :class="isScrolled
+      ? 'bg-white/95 backdrop-blur-md shadow-md'
+      : 'bg-primary/30 backdrop-blur-md border-b border-white/10'"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center">
+          <div class="flex flex-col">
+            <span
+              class="text-xl font-bold tracking-tight transition-colors"
+              :class="logoTextClass"
             >
-            <img 
-              src="/LOGO_SMALL2.png"
-              class="w-[360px] h-[70px] transition-all duration-500 object-contain absolute"
-              :style="{ opacity: isScrolled ? '1' : '0' }"
+              <span class="text-accent">GEO</span>DIMETR
+            </span>
+            <span
+              class="text-xs transition-colors"
+              :class="logoSubtitleClass"
             >
-          </RouterLink>
-        </div>      
-        <div class="hidden lg:flex items-center justify-center">
-          <div class="flex-row text-gray-500 font-normal mx-20">
-            <InfoIconComponent class="!mt-1" icon="pi pi-phone" :data="['602 319 486']"/>
-            <InfoIconComponent class="!mt-1" icon="pi pi-send" :data="['geodimetr@op.pl']"/>
+              mgr inż. Mariusz Czech
+            </span>
           </div>
-        </div> 
-
+        </div>
+        <nav class="hidden lg:flex items-center space-x-1">
+          <button
+            v-for="link in navLinks"
+            :key="link.id"
+            class="px-4 py-2 text-sm font-medium transition-colors rounded-lg"
+            :class="navBtnClass"
+            @click="scrollToSection(link.id)"
+          >
+            {{ link.label }}
+          </button>
+        </nav>
+        <div class="hidden lg:flex items-center space-x-4">
+          <a
+            href="tel:+48123456789"
+            class="flex items-center text-sm transition-colors"
+            :class="phoneClass"
+          >
+            <Phone class="w-4 h-4 mr-2" />
+            +48 602 319 486
+          </a>
+          <button
+            class="inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors"
+            :class="ctaBtnClass"
+            @click="scrollToSection('contact')"
+          >
+            Kontakt
+          </button>
+        </div>
+        <button
+          class="lg:hidden p-2 transition-colors rounded-lg"
+          :class="navBtnClass"
+          @click="isMobileMenuOpen = !isMobileMenuOpen"
+        >
+          <X v-if="isMobileMenuOpen" class="w-6 h-6" />
+          <Menu v-else class="w-6 h-6" />
+        </button>
       </div>
-              <div class="md:hidden flex text-4xl text-black cursor-pointer items-center justify-end">
-          <i :class="[isOpen ? 'bi bi-x' : 'bi bi-list']" @click="toggleMobileNavigationMenu"/>
+    </div>
+
+    <div v-if="isMobileMenuOpen" class="lg:hidden bg-white border-t border-border">
+      <div class="px-4 py-6 space-y-3">
+        <button
+          v-for="link in navLinks"
+          :key="link.id"
+          class="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-accent hover:bg-muted rounded-lg transition-colors"
+          @click="scrollToSection(link.id)"
+        >
+          {{ link.label }}
+        </button>
+        <div class="pt-4 space-y-3">
+          <a
+            href="tel:+48123456789"
+            class="flex items-center justify-center px-4 py-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+          >
+            <Phone class="w-4 h-4 mr-2" />
+            +48 123 456 789
+          </a>
+          <button
+            class="w-full inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors bg-accent text-accent-foreground hover:bg-accent/90"
+            @click="scrollToSection('contact')"
+          >
+            Kontakt
+          </button>
         </div>
       </div>
-      
-
-      <nav
-        class="hidden md:flex md:items-center md:static absolute text-black font-medium cursor-pointer bg-white justify-end md:w-full h-full"
-      >
-        <NavigationItem v-for="link in links" :key="link.label" :link="link" @close-menu="toggleMobileNavigationMenu"/>
-      </nav>
     </div>
-    <MobileNavigation
-      :links="links"
-      :isOpen="isOpen"
-      @close="toggleMobileNavigationMenu"
-    />
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref } from 'vue'
-import { RouterLink } from 'vue-router'
-import NavigationItem from './NavigationItem.vue'
-import InfoIconComponent from '@/components/ContactComponent/InfoIconComponent.vue'
-import MobileNavigation from '@/components/Pages/HomePage/MobileNavigation.vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { Menu, X, Phone } from 'lucide-vue-next'
 
-const links = ref([
-  { label: 'Oferta', path: '/services' },
-  { label: 'O nas', path: '/about' },
-  { label: 'Kontakt', path: '/contact' }
-])
-
-const isOpen = ref(false)
 const isScrolled = ref(false)
+const isMobileMenuOpen = ref(false)
 
-function toggleMobileNavigationMenu(){
-  isOpen.value = !isOpen.value
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 20
 }
 
-function handleScroll() {
-  isScrolled.value = window.scrollY >= 150
+onMounted(() => window.addEventListener('scroll', handleScroll))
+onUnmounted(() => window.removeEventListener('scroll', handleScroll))
+
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id)
+  if (element) {
+    const offset = 80
+    const elementPosition = element.getBoundingClientRect().top
+    const offsetPosition = elementPosition + window.pageYOffset - offset
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
+    isMobileMenuOpen.value = false
+  }
 }
 
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-})
+const navLinks = [
+  { id: 'home', label: 'Start' },
+  { id: 'services', label: 'Usługi' },
+  { id: 'process', label: 'Jak działamy' },
+  { id: 'projects', label: 'Realizacje' },
+  { id: 'testimonials', label: 'Opinie' },
+  { id: 'faq', label: 'FAQ' },
+]
 
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
+const navBtnClass = computed(() =>
+  isScrolled.value
+    ? 'text-foreground hover:text-accent hover:bg-muted'
+    : 'text-white hover:text-accent hover:bg-white/10'
+)
+
+const logoTextClass = computed(() =>
+  isScrolled.value ? 'text-primary' : 'text-white'
+)
+
+const logoSubtitleClass = computed(() =>
+  isScrolled.value ? 'text-muted-foreground' : 'text-gray-300'
+)
+
+const phoneClass = computed(() =>
+  isScrolled.value ? 'text-muted-foreground hover:text-accent' : 'text-gray-200 hover:text-accent'
+)
+
+const ctaBtnClass = computed(() =>
+  isScrolled.value
+    ? 'bg-accent text-accent-foreground hover:bg-accent/90'
+    : 'bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20'
+)
 </script>
