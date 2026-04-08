@@ -1,23 +1,11 @@
 <template>
   <section id="projects" class="py-24 bg-muted">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
-        class="text-center mb-12"
-      >
-        <div class="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
-          <span class="text-sm font-semibold text-accent">Portfolio</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
-          Zrealizowane projekty
-        </h2>
-        <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Poznaj wybrane realizacje z naszego bogatego portfolio
-        </p>
-      </div>
+      <SectionHeader
+        badge="Portfolio"
+        title="Zrealizowane projekty"
+        description="Poznaj wybrane realizacje z naszego bogatego portfolio"
+      />
 
       <!-- Category Filter -->
       <div
@@ -77,6 +65,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import SectionHeader from './widgets/SectionHeader.vue'
 
 const projects = [
   {

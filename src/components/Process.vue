@@ -1,5 +1,5 @@
 <template>
-  <section id="process" class="py-24 bg-gradient-to-br from-primary via-[#0a4f65] to-secondary relative overflow-hidden">
+  <section id="process" class="py-24 bg-linear-to-br from-primary via-[#0a4f65] to-secondary relative overflow-hidden">
 
     <!-- Background grid pattern -->
     <div
@@ -8,24 +8,15 @@
     />
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Section Header -->
-      <div
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
-        class="text-center mb-16"
-      >
-        <div class="inline-block px-4 py-2 bg-white/10 rounded-full mb-4">
-          <span class="text-sm font-semibold text-accent">Jak działamy</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-          Prosty proces współpracy
-        </h2>
-        <p class="text-lg text-gray-200 max-w-3xl mx-auto">
-          W 4 krokach od zgłoszenia do gotowej dokumentacji
-        </p>
-      </div>
+      <SectionHeader
+        badge="Jak działamy"
+        title="Prosty proces współpracy"
+        description="W 4 krokach od zgłoszenia do gotowej dokumentacji"
+        badge-class="bg-white/10"
+        badge-label-class="text-accent"
+        title-class="text-white"
+        description-class="text-gray-200"
+      />
 
       <!-- Process Steps -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -46,31 +37,23 @@
               v-motion
               :initial="{ scaleX: 0 }"
               :visible-once="{ scaleX: 1, transition: { duration: 800, delay: index * 150 + 300 } }"
-              class="h-full bg-accent origin-left"
+              class="h-full bg-accent origin-left will-change-transform"
             />
           </div>
 
           <!-- Card -->
           <div class="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:bg-white/15 transition-colors z-10">
-
-            <!-- Number badge -->
             <div class="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
               <span class="text-lg font-bold text-accent-foreground">{{ step.number }}</span>
             </div>
-
-            <!-- Icon -->
             <div class="flex items-center justify-center w-16 h-16 bg-accent/20 rounded-xl mb-6">
               <component :is="step.icon" class="w-8 h-8 text-accent" />
             </div>
-
-            <!-- Content -->
             <h3 class="text-xl font-bold text-white mb-3">{{ step.title }}</h3>
             <p class="text-gray-200 leading-relaxed">{{ step.description }}</p>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
 </template>
@@ -79,6 +62,7 @@
 <script setup lang="ts">
 import { Phone, FileCheck, MapPinned, CheckCircle2 } from 'lucide-vue-next'
 import type { Component } from 'vue'
+import SectionHeader from './widgets/SectionHeader.vue'
 
 interface Step {
   icon: Component

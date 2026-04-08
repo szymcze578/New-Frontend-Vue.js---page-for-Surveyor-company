@@ -23,8 +23,8 @@
     />
 
     <!-- Gradient orbs -->
-    <div class="absolute top-1/4 -left-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-    <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+    <div class="absolute top-1/4 -left-32 size-96 bg-accent/10 rounded-full blur-3xl" />
+    <div class="absolute bottom-1/4 -right-32 size-96 bg-secondary/10 rounded-full blur-3xl" />
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -110,7 +110,7 @@
           :enter="{ opacity: 1, scale: 1, transition: { duration: 800, delay: 400 } }"
           class="hidden lg:block relative"
         >
-          <div class="relative w-full h-[500px]">
+          <div class="relative w-full h-125">
 
             <!-- Image with overlay -->
             <div class="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl shadow-accent/10">
@@ -121,10 +121,10 @@
                 @error="onImgError"
               />
               <!-- Gradient overlay -->
-              <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
+              <div class="absolute inset-0 bg-linear-to-t from-primary/80 via-primary/20 to-transparent" />
 
               <!-- Floating badge - top right -->
-              <div class="absolute top-8 right-8 w-16 h-16 bg-accent/90 rounded-2xl shadow-lg flex items-center justify-center backdrop-blur-sm animate-float-up">
+              <div class="absolute top-8 right-8 size-16 bg-accent/90 rounded-2xl shadow-lg flex items-center justify-center backdrop-blur-sm animate-float-up">
                 <span class="text-white font-bold text-sm">±2mm</span>
               </div>
 
@@ -136,7 +136,7 @@
             </div>
 
             <!-- Decorative border element -->
-            <div class="absolute -bottom-6 -right-6 w-48 h-48 border-2 border-accent/30 rounded-3xl -z-10 animate-float-rotate" />
+            <div class="absolute -bottom-6 -right-6 w-48 border-2 border-accent/30 rounded-3xl -z-10 animate-float-rotate" />
           </div>
         </div>
 

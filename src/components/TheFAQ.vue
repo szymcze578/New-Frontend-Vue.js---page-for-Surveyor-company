@@ -1,24 +1,12 @@
 <template>
   <section id="faq" class="py-24 bg-muted">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <!-- Section Header -->
-      <div
-        v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
-        class="text-center mb-16"
-      >
-        <div class="inline-block px-4 py-2 bg-accent/10 rounded-full mb-4">
-          <span class="text-sm font-semibold text-accent">Pytania i odpowiedzi</span>
-        </div>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mb-6">
-          Najczęściej zadawane pytania
-        </h2>
-        <p class="text-lg text-muted-foreground">
-          Znajdź odpowiedzi na popularne pytania dotyczące usług geodezyjnych
-        </p>
-      </div>
+      <SectionHeader
+        badge="Pytania i odpowiedzi"
+        title="Najczęściej zadawane pytania"
+        description="Znajdź odpowiedzi na popularne pytania dotyczące usług geodezyjnych"
+        description-class="text-muted-foreground"
+      />
 
       <!-- FAQ List -->
       <div class="space-y-4">
@@ -36,7 +24,7 @@
           >
             <span class="font-semibold text-primary pr-8">{{ faq.question }}</span>
             <ChevronDown
-              class="w-5 h-5 text-accent shrink-0 transition-transform duration-300"
+              class="size-5 text-accent shrink-0 transition-transform duration-300"
               :class="{ 'rotate-180': openIndex === index }"
             />
           </button>
@@ -76,6 +64,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { ChevronDown } from 'lucide-vue-next'
+import SectionHeader from './widgets/SectionHeader.vue'
 
 const faqs = [
   {

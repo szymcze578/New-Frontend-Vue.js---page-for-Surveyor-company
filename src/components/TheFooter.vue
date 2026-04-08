@@ -22,7 +22,7 @@
               :aria-label="social.label"
               class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
             >
-              <component :is="social.icon" class="w-5 h-5" />
+              <component :is="social.icon" class="size-5" />
             </a>
           </div>
         </div>
@@ -55,25 +55,25 @@
           <h3 class="text-lg font-bold mb-6">Kontakt</h3>
           <ul class="space-y-4">
             <li class="flex items-start">
-              <MapPin class="w-5 h-5 text-accent mr-3 shrink-0 mt-0.5" />
+              <MapPin class="size-5  text-accent mr-3 shrink-0 mt-0.5" />
                 <div className="text-gray-300 text-sm">
                   <div>ul. Sienkiewicza 36</div>
                   <div>Zawiercie, woj. śląskie</div>
                 </div>
             </li>
             <li class="flex items-start">
-              <Phone class="w-5 h-5 text-accent mr-3 shrink-0 mt-0.5" />
+              <Phone class="size-5 text-accent mr-3 shrink-0 mt-0.5" />
               <a
-                href="tel:+48123456789"
+                href="tel:+48602319486"
                 class="text-gray-300 text-sm hover:text-accent transition-colors"
               >
                 +48 602 319 486
               </a>
             </li>
             <li class="flex items-start">
-              <Mail class="w-5 h-5 text-accent mr-3 shrink-0 mt-0.5" />
+              <Mail class="size-5 text-accent mr-3 shrink-0 mt-0.5" />
               <a
-                href="mailto:kontakt@geodimetr.pl"
+                href="mailto:geodimetr@op.pl"
                 class="text-gray-300 text-sm hover:text-accent transition-colors"
               >
                 geodimetr@op.pl
