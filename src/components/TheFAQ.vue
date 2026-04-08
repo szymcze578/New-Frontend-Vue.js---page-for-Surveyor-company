@@ -19,7 +19,7 @@
           class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
         >
           <button
-            class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-muted/30 transition-colors"
+            class="w-full px-8 py-6 flex items-center justify-between text-left hover:bg-muted/30 transition-colors cursor-pointer"
             @click="toggle(index)"
           >
             <span class="font-semibold text-primary pr-8">{{ faq.question }}</span>

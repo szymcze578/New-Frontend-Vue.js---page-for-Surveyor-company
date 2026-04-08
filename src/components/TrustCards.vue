@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-import { Target, Shield, Award, Clock } from 'lucide-vue-next'
+import { Target, Shield, Award, Clock, MapPin, FileText } from 'lucide-vue-next'
 import type { Component } from 'vue'
 
 interface Stat {
@@ -49,10 +49,10 @@ const stats: Stat[] = [
     description: 'Ekspresowe usługi',
   },
   {
-    icon: Shield,
-    value: '100%',
-    label: 'Ubezpieczenie OC',
-    description: 'Pełne zabezpieczenie',
+    icon: FileText,
+    value: '1000+',
+    label: 'Wykonanych operatów',
+    description: 'Potwierdzona skuteczność',
   },
   {
     icon: Award,

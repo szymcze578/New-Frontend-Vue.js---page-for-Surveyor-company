@@ -27,7 +27,7 @@
           <button
             v-for="link in navLinks"
             :key="link.id"
-            class="px-4 py-2 text-sm font-medium transition-colors rounded-lg"
+            class="px-4 py-2 text-sm font-medium transition-colors rounded-lg cursor-pointer"
             :class="navBtnClass"
             @click="scrollToSection(link.id)"
           >
@@ -44,7 +44,7 @@
             +48 602 319 486
           </a>
           <button
-            class="inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors"
+            class="inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer"
             :class="ctaBtnClass"
             @click="scrollToSection('contact')"
           >

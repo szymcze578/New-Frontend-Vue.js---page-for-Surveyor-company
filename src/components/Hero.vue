@@ -73,14 +73,14 @@
             class="flex flex-col sm:flex-row gap-4"
           >
             <button
-              class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 transition-colors"
+              class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 transition-colors cursor-pointer"
               @click="scrollToSection('contact')"
             >
               Bezpłatna wycena
               <ArrowRight class="ml-2 w-5 h-5" />
             </button>
             <button
-              class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold border-2 border-white text-white hover:bg-white/10 transition-colors"
+              class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold border-2 border-white text-white hover:bg-white/10 transition-colors cursor-pointer"
               @click="scrollToSection('services')"
             >
               Nasze usługi

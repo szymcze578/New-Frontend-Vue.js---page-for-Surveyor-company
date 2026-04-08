@@ -19,7 +19,7 @@
           :key="category"
           @click="selectedCategory = category"
           :class="[
-            'px-5 py-2 rounded-full text-sm font-medium transition-all duration-300',
+            'px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer',
             selectedCategory === category
               ? 'bg-accent text-accent-foreground shadow-md'
               : 'bg-white text-foreground hover:bg-accent/10 hover:text-accent',
@@ -75,12 +75,6 @@ const projects = [
     description: 'Kompleksowa obsługa inwestycji mieszkaniowej',
   },
   {
-    image: 'https://images.unsplash.com/photo-1771189255468-1bd3c9f76f7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBidWlsZGluZyUyMGFyY2hpdGVjdHVyZSUyMGJsdWVwcmludHxlbnwxfHx8fDE3NzU0NzE5MTN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Centrum handlowe Zawiercie Plaza',
-    category: 'Komercyjna',
-    description: 'Pomiary i wytyczenie obiektu kubaturowego',
-  },
-  {
     image: 'https://images.unsplash.com/photo-1773299567657-a4bf83503ce5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYW5kJTIwcHJvcGVydHklMjBib3VuZGFyeSUyMHN1cnZleXxlbnwxfHx8fDE3NzU0NzE5MTN8MA&ixlib=rb-4.1.0&q=80&w=1080',
     title: 'Podziały działek - ul. Leśna',
     category: 'Podziały',
@@ -99,14 +93,32 @@ const projects = [
     description: 'Mapy do celów projektowych dla 8 domów',
   },
   {
-    image: 'https://images.unsplash.com/photo-1608923657667-fe22e4b44448?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnZW9kZXRpYyUyMG1lYXN1cmVtZW50JTIwdG9wb2dyYXBoeXxlbnwxfHx8fDE3NzU0NzE5MTR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Park fotowoltaiczny Siewierz',
-    category: 'Energia',
-    description: 'Pomiary dla farmy fotowoltaicznej 5MW',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    title: 'Drogi powiatowe w Szczekocinach',
+    category: 'Infrastruktura',
+    description: 'Obsługa geodezyjna budowy i przebudowy dróg powiatowych',
   },
+  {
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    title: 'Magazyn Dabex – ul. Technologiczna, Zawiercie',
+    category: 'Komercyjna',
+    description: 'Kompleksowa obsługa geodezyjna budowy obiektu magazynowego',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1694674818352-f6061a0561a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    title: 'Pomiar i inwentaryzacja gazociągu',
+    category: 'Infrastruktura',
+    description: 'Geodezyjny pomiar przebiegu sieci gazowej wraz z dokumentacją powykonawczą',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    title: 'Obsługa inwestycji CMC Zawiercie',
+    category: 'Przemysłowa',
+    description: 'Wieloetapowa obsługa geodezyjna zakładu hutniczego CMC Poland',
+  }
 ]
 
-const categories = ['Wszystkie', 'Deweloperska', 'Komercyjna', 'Podziały', 'Infrastruktura', 'Budownictwo', 'Energia']
+const categories = ['Wszystkie', 'Deweloperska', 'Komercyjna', 'Podziały', 'Infrastruktura', 'Budownictwo', 'Przemysłowa']
 
 const selectedCategory = ref('Wszystkie')
 
