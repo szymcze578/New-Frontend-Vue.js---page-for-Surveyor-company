@@ -69,10 +69,28 @@ import SectionHeader from './widgets/SectionHeader.vue'
 
 const projects = [
   {
-    image: 'https://images.unsplash.com/photo-1628155849837-648cf206ec31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXlpbmclMjBlcXVpcG1lbnQlMjBjb25zdHJ1Y3Rpb24lMjBzaXRlfGVufDF8fHx8MTc3NTQ3MTkxMnww&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Osiedle mieszkaniowe "Zielone Wzgórze"',
-    category: 'Deweloperska',
-    description: 'Kompleksowa obsługa inwestycji mieszkaniowej',
+    image: 'https://images.unsplash.com/photo-1693019108329-1889fb170f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    title: 'Drogi powiatowe w Szczekocinach',
+    category: 'Infrastruktura',
+    description: 'Obsługa geodezyjna budowy i przebudowy dróg powiatowych',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    title: 'Magazyn Dabex – ul. Technologiczna, Zawiercie',
+    category: 'Komercyjna',
+    description: 'Kompleksowa obsługa geodezyjna budowy obiektu magazynowego',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    title: 'Obsługa inwestycji CMC Zawiercie',
+    category: 'Przemysłowa',
+    description: 'Wieloetapowa obsługa geodezyjna zakładu hutniczego CMC Poland',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXlpbmclMjBlcXVpcG1lbnQlMjBjb25zdHJ1Y3Rpb24lMjBzaXRlfGVufDF8fHx8MTc3NTQ3MTkxMnww&ixlib=rb-4.1.0&q=80&w=1080',
+    title: 'Budownictwo jednorodzinne – Dobraków',
+    category: 'Budownictwo',
+    description: 'Kompleksowa obsługa geodezyjna budowy domu jednorodzinnego dla klientów prywatnych',
   },
   {
     image: 'https://images.unsplash.com/photo-1773299567657-a4bf83503ce5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYW5kJTIwcHJvcGVydHklMjBib3VuZGFyeSUyMHN1cnZleXxlbnwxfHx8fDE3NzU0NzE5MTN8MA&ixlib=rb-4.1.0&q=80&w=1080',
@@ -87,38 +105,14 @@ const projects = [
     description: 'Projektowanie i realizacja drogi gminnej',
   },
   {
-    image: 'https://images.unsplash.com/photo-1772617662896-73eaa616c56b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNpZGVudGlhbCUyMGRldmVsb3BtZW50JTIwaG91c2VzfGVufDF8fHx8MTc3NTQ3MTkxNHww&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Domy jednorodzinne - Mrzygłód',
-    category: 'Budownictwo',
-    description: 'Mapy do celów projektowych dla 8 domów',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    title: 'Drogi powiatowe w Szczekocinach',
-    category: 'Infrastruktura',
-    description: 'Obsługa geodezyjna budowy i przebudowy dróg powiatowych',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    title: 'Magazyn Dabex – ul. Technologiczna, Zawiercie',
-    category: 'Komercyjna',
-    description: 'Kompleksowa obsługa geodezyjna budowy obiektu magazynowego',
-  },
-  {
     image: 'https://images.unsplash.com/photo-1694674818352-f6061a0561a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
     title: 'Pomiar i inwentaryzacja gazociągu',
     category: 'Infrastruktura',
     description: 'Geodezyjny pomiar przebiegu sieci gazowej wraz z dokumentacją powykonawczą',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    title: 'Obsługa inwestycji CMC Zawiercie',
-    category: 'Przemysłowa',
-    description: 'Wieloetapowa obsługa geodezyjna zakładu hutniczego CMC Poland',
   }
 ]
 
-const categories = ['Wszystkie', 'Deweloperska', 'Komercyjna', 'Podziały', 'Infrastruktura', 'Budownictwo', 'Przemysłowa']
+const categories = ['Wszystkie', 'Komercyjna', 'Podziały', 'Infrastruktura', 'Budownictwo', 'Przemysłowa']
 
 const selectedCategory = ref('Wszystkie')
 

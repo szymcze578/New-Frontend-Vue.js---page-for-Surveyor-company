@@ -20,6 +20,8 @@
               :key="social.label"
               :href="social.href"
               :aria-label="social.label"
+              target="_blank"
+               rel="noopener noreferrer"
               class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-colors"
             >
               <component :is="social.icon" class="size-5" />
@@ -87,14 +89,6 @@
           <p class="text-gray-400 text-sm">
             © 2026 Geodimetr. Wszelkie prawa zastrzeżone.
           </p>
-          <div class="flex space-x-6">
-            <a href="#" class="text-gray-400 hover:text-accent text-sm transition-colors">
-              Polityka prywatności
-            </a>
-            <a href="#" class="text-gray-400 hover:text-accent text-sm transition-colors">
-              Regulamin
-            </a>
-          </div>
         </div>
       </div>
     </div>
@@ -133,8 +127,6 @@ const services = [
 ];
 
 const socials = [
-  { label: 'Facebook', icon: Facebook, href: '#' },
-  { label: 'Instagram', icon: Instagram, href: '#' },
-  { label: 'LinkedIn', icon: Linkedin, href: '#' },
+  { label: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/profile.php?id=100069162198575' }
 ];
 </script>

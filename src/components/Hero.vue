@@ -136,7 +136,7 @@
             </div>
 
             <!-- Decorative border element -->
-            <div class="absolute -bottom-6 -right-6 w-48 border-2 border-accent/30 rounded-3xl -z-10 animate-float-rotate" />
+            <div class="absolute -bottom-6 -right-6 size-48 border-2 border-accent/30 rounded-3xl -z-10 animate-float-rotate" />
           </div>
         </div>
 
@@ -164,7 +164,7 @@ const trustStats = [
   { value: '100%', label: 'Zadowolenie' },
 ]
 
-const imgSrc = 'https://images.unsplash.com/photo-1661945072487-bf771c03851c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXlvciUyMGdlb2RldGljJTIwZXF1aXBtZW50JTIwcHJlY2lzaW9uJTIwbWVhc3VyZW1lbnR8ZW58MXx8fHwxNzc1NTQ4MzExfDA&ixlib=rb-4.1.0&q=80&w=1080'
+const imgSrc = 'https://images.unsplash.com/photo-1610081339709-d86503fcaf15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXlvciUyMGdlb2RldGljJTIwZXF1aXBtZW50JTIwcHJlY2lzaW9uJTIwbWVhc3VyZW1lbnR8ZW58MXx8fHwxNzc1NTQ4MzExfDA&ixlib=rb-4.1.0&q=80&w=1080'
 
 const onImgError = (e: Event) => {
   (e.target as HTMLImageElement).style.display = 'none'
