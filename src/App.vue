@@ -7,7 +7,7 @@
     <Process/>
     <Advantages/>
     <Projects/>
-    <Opinions/>
+    <!--<Opinions/>-->
     <TheFAQ/>
     <ContactCTA/>
     <TheFooter class="mt-auto"/>
