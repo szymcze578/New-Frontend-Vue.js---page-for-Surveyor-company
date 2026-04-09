@@ -122,7 +122,6 @@ const navLinks = [
   { id: 'services', label: 'Usługi' },
   { id: 'process', label: 'Jak działamy' },
   { id: 'projects', label: 'Realizacje' },
-  { id: 'testimonials', label: 'Opinie' },
   { id: 'faq', label: 'FAQ' },
 ]
 
