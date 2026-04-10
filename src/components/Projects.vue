@@ -70,9 +70,9 @@ import SectionHeader from './widgets/SectionHeader.vue'
 const projects = [
   {
     image: 'https://images.unsplash.com/photo-1693019108329-1889fb170f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    title: 'Drogi powiatowe w Szczekocinach',
+    title: 'Drogi gminne w Szczekocinach',
     category: 'Infrastruktura',
-    description: 'Obsługa geodezyjna budowy i przebudowy dróg powiatowych',
+    description: 'Obsługa geodezyjna budowy i przebudowy dróg gminnych i powiatowych',
   },
   {
     image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
@@ -88,7 +88,7 @@ const projects = [
   },
   {
     image: 'https://images.unsplash.com/photo-1662924365620-353b5e991a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXlpbmclMjBlcXVpcG1lbnQlMjBjb25zdHJ1Y3Rpb24lMjBzaXRlfGVufDF8fHx8MTc3NTQ3MTkxMnww&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Budownictwo jednorodzinne – Dobraków',
+    title: 'Budownictwo jednorodzinne – województwo Śląskie',
     category: 'Budownictwo',
     description: 'Kompleksowa obsługa geodezyjna budowy domu jednorodzinnego dla klientów prywatnych',
   },
@@ -106,9 +106,9 @@ const projects = [
   // },
   {
     image: 'https://images.unsplash.com/photo-1694674818352-f6061a0561a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    title: 'Pomiar i inwentaryzacja gazociągu',
+    title: 'Pomiar i inwentaryzacja sieci elektroenergetycznych',
     category: 'Infrastruktura',
-    description: 'Geodezyjny pomiar przebiegu sieci gazowej wraz z dokumentacją powykonawczą',
+    description: 'Geodezyjny pomiar przebiegu sieci energetycznej wraz z dokumentacją powykonawczą',
   }
 ]
 

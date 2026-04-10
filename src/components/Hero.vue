@@ -76,7 +76,7 @@
               class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg shadow-accent/20 transition-colors cursor-pointer"
               @click="scrollToSection('contact')"
             >
-              Bezpłatna wycena
+              Wycena
               <ArrowRight class="ml-2 w-5 h-5" />
             </button>
             <button
@@ -159,8 +159,8 @@ const scrollToSection = (id: string) => {
 }
 
 const trustStats = [
-  { value: '15+', label: 'Lat doświadczenia' },
-  { value: '500+', label: 'Projektów' },
+  { value: '30+', label: 'Lat doświadczenia' },
+  { value: '1000+', label: 'Zleceń' },
   { value: '100%', label: 'Zadowolenie' },
 ]
 

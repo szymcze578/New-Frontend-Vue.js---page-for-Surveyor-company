@@ -5,7 +5,7 @@
       <SectionHeader
         badge="Nasze usługi"
         title="Kompleksowe usługi geodezyjne"
-        description="Profesjonalna obsługa geodezyjna dla klientów indywidualnych, deweloperów i firm budowlanych"
+        description="Profesjonalna obsługa geodezyjna dla klientów indywidualnych, przedsiębiorstw, admistracji rządowej i samorządowej, deweloperów oraz firm budowlanych."
       />
       <!-- Services Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,31 +76,31 @@ const services: Service[] = [
     icon: Building2,
     title: 'Usługi dla deweloperów',
     description: 'Kompleksowa obsługa geodezyjna dla inwestycji mieszkaniowych i komercyjnych.',
-    features: ['Wytyczenie obiektów', 'Pomiary kontrolne', 'Nadzór geodezyjny'],
+    features: ['Wytyczenie obiektów', 'Pomiary kontrolne', 'Nadzór geodezyjny','Inwentaryzacja powykonawcza'],
   },
   {
     icon: Map,
     title: 'Podziały nieruchomości',
     description: 'Profesjonalne podziały działek zgodne z prawem geodezyjnym i kartograficznym.',
-    features: ['Podział geodezyjny', 'Rozgraniczenie działek', 'Scalenia gruntów'],
+    features: ['Podział nieruchomości', 'Podział nieruchomości w terenach rolnych i leśnych', 'Scalenia gruntów'],
   },
   {
     icon: FileText,
-    title: 'Aktualizacja granic',
-    description: 'Weryfikacja i uaktualnienie granic działek w ewidencji gruntów.',
-    features: ['Wznowienie znaków granicznych', 'Uzgodnienie granic', 'Modernizacja mapy'],
+    title: 'Ewidencja gruntów i budynków',
+    description: 'Prace związane z pomiarem granic nieruchomości',
+    features: ['Wznowienie znaków granicznych','Wyznaczenie punktów granicznych', 'Ustalenie przebiegu granic', 'Rozgraniczenie nieruchomości'],
   },
   {
     icon: Ruler,
     title: 'Pomiary sytuacyjno-wysokościowe',
     description: 'Szczegółowe pomiary terenu dla celów projektowych i inwentaryzacyjnych.',
-    features: ['Pomiar niwelacyjny', 'Tachimetria'],
+    features: ['Pomiar niwelacyjny', 'Tachimetria','Pomiary metodą GPS'],
   },
   {
     icon: TrendingUp,
     title: 'Obsługa inwestycji',
     description: 'Geodezyjne wsparcie inwestycji od etapu projektu po odbiór końcowy.',
-    features: ['Geodezyjna obsługa budowy', 'Inwentaryzacja obiektów', 'As-built'],
+    features: ['Geodezyjna obsługa budowy', 'Inwentaryzacja obiektów', ],
   },
 ]
 </script>

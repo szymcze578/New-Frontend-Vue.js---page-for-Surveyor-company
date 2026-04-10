@@ -69,11 +69,11 @@ import SectionHeader from './widgets/SectionHeader.vue'
 const faqs = [
   {
     question: 'Ile kosztuje mapa do celów projektowych?',
-    answer: 'Koszt mapy zależy od wielkości działki, stopnia jej zabudowania i lokalizacji. Średnio ceny wahają się od 800 do 2000 zł. Skontaktuj się z nami, aby otrzymać bezpłatną wycenę dostosowaną do Twojego przypadku.',
+    answer: 'Koszt mapy zależy od wielkości działki, stopnia jej zabudowania i lokalizacji. Skontaktuj się z nami, aby otrzymać bezpłatną wycenę dostosowaną do Twojego przypadku.',
   },
   {
     question: 'Jak długo trwa wykonanie dokumentacji geodezyjnej?',
-    answer: 'Standardowy czas realizacji to 7-14 dni roboczych. W pilnych przypadkach oferujemy usługę ekspresową, która pozwala na wykonanie dokumentacji w ciągu 24-48 godzin (za dodatkową opłatą).',
+    answer: 'Standardowy czas realizacji zależy od zakresu koniecznych prac, którą możemy ocenić po pierwszym kontakcie.',
   },
   {
     question: 'Jakie dokumenty są potrzebne do zlecenia usługi?',
@@ -89,11 +89,11 @@ const faqs = [
   },
   {
     question: 'Co to jest wznowienie znaków granicznych?',
-    answer: 'Wznowienie to usługa polegająca na odtworzeniu i utrwaleniu granic działki na gruncie. Wykonuje się ją na podstawie danych z ewidencji gruntów. Dzięki temu dokładnie wiesz, gdzie przebiega granica Twojej nieruchomości.',
+    answer: 'Wznowienie to usługa polegająca na odtworzeniu i utrwaleniu granic działki na gruncie. Wykonuje się ją na podstawie danych archiwalnych będących w zasobach geodezyjnych. Dzięki temu dokładnie wiesz, gdzie przebiega granica Twojej nieruchomości.',
   },
   {
     question: 'Jak wygląda proces podziału działki?',
-    answer: 'Proces składa się z kilku etapów: sporządzenie projektu podziału, zgłoszenie do odpowiednich instytucji, pomiary terenowe, przygotowanie dokumentacji oraz wpis do ewidencji gruntów. Cały proces zajmuje zwykle 2-3 miesiące.',
+    answer: 'Proces składa się z kilku etapów: sporządzenie wstępnego projektu podziału, zgłoszenie prac geodezyjnych do odpowiednich instytucji, pomiary terenowe, przygotowanie mapy z projektem podziału nieruchomości. Cały proces zajmuje zwykle 3-4 miesiące.',
   },
 ]
 

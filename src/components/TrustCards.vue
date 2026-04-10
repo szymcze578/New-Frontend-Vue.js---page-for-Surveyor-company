@@ -44,9 +44,9 @@ const stats: Stat[] = [
   },
   {
     icon: Clock,
-    value: '24h',
-    label: 'Czas realizacji',
-    description: 'Ekspresowe usługi',
+    value: '6dni',
+    label: 'Dostępność w tygodniu',
+    description: 'Pon–Sb bez przestojów',
   },
   {
     icon: FileText,
@@ -56,7 +56,7 @@ const stats: Stat[] = [
   },
   {
     icon: Award,
-    value: '15+',
+    value: '30+',
     label: 'Lat doświadczenia',
     description: 'Sprawdzona jakość',
   },
