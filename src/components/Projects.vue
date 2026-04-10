@@ -105,7 +105,7 @@ const projects = [
   //   description: 'Projektowanie i realizacja drogi gminnej',
   // },
   {
-    image: 'https://images.unsplash.com/photo-1694674818352-f6061a0561a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
+    image: 'https://images.unsplash.com/photo-1659560727750-d76cfe133c92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
     title: 'Pomiar i inwentaryzacja sieci elektroenergetycznych',
     category: 'Infrastruktura',
     description: 'Geodezyjny pomiar przebiegu sieci energetycznej wraz z dokumentacją powykonawczą',
