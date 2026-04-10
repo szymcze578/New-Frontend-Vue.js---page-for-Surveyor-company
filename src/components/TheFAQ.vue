@@ -50,7 +50,7 @@
           Nie znalazłeś odpowiedzi na swoje pytanie?
         </p>
         <a
-          href="tel:+48123456789"
+          href="tel:+48 602 319 486"
           class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition-colors"
         >
           Skontaktuj się z nami: +48 602 319 486

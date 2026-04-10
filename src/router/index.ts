@@ -9,7 +9,6 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: App,
-      meta: {title: "Geodimetr - Usługi geodezyjne",}
     }
   ],
   scrollBehavior(to, from, savedPosition) {
