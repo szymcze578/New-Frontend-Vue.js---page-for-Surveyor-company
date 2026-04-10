@@ -31,7 +31,7 @@
           <!-- Contact details -->
           <div class="space-y-4 mb-8">
             <a
-              href="tel:+48123456789"
+              href="tel:+48 602 319 486"
               class="flex items-center text-white hover:text-accent transition-colors group"
             >
               <div class="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mr-4 group-hover:bg-accent/20 transition-colors">
@@ -44,7 +44,7 @@
             </a>
 
             <a
-              href="mailto:kontakt@geodimetr.pl"
+              href="mailto:geodimetr@op.pl"
               class="flex items-center text-white hover:text-accent transition-colors group"
             >
               <div class="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mr-4 group-hover:bg-accent/20 transition-colors">
@@ -71,7 +71,7 @@
           <!-- CTA buttons -->
           <div class="flex flex-col sm:flex-row gap-4">
             <a
-              href="tel:+48123456789"
+              href="tel:+48 602 319 486"
               class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold bg-accent text-accent-foreground hover:bg-accent/90 transition-colors"
             >
               Zadzwoń teraz

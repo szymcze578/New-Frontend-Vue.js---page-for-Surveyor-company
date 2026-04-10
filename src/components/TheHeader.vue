@@ -36,7 +36,7 @@
         </nav>
         <div class="hidden lg:flex items-center space-x-4">
           <a
-            href="tel:+48123456789"
+            href="tel:+48 602 319 486"
             class="flex items-center text-sm transition-colors"
             :class="phoneClass"
           >
@@ -74,11 +74,11 @@
         </button>
         <div class="pt-4 space-y-3">
           <a
-            href="tel:+48123456789"
+            href="tel:+48 602 319 486"
             class="flex items-center justify-center px-4 py-2 text-sm text-muted-foreground hover:text-accent transition-colors"
           >
             <Phone class="w-4 h-4 mr-2" />
-            +48 123 456 789
+            +48 602 319 486
           </a>
           <button
             class="w-full inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors bg-accent text-accent-foreground hover:bg-accent/90"
