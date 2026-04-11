@@ -31,7 +31,7 @@
           <!-- Contact details -->
           <div class="space-y-4 mb-8">
             <a
-              href="tel:+48 602 319 486"
+              :href="'tel:' + contact?.phone?.replace(/\s/g, '')"
               class="flex items-center text-white hover:text-accent transition-colors group"
             >
               <div class="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mr-4 group-hover:bg-accent/20 transition-colors">
@@ -39,12 +39,12 @@
               </div>
               <div>
                 <div class="text-sm text-gray-300">Telefon</div>
-                <div class="font-semibold">+48 602 319 486</div>
+                <div class="font-semibold">{{ contact?.phone }}</div>
               </div>
             </a>
 
             <a
-              href="mailto:geodimetr@op.pl"
+              :href="'mailto:' + contact?.email"
               class="flex items-center text-white hover:text-accent transition-colors group"
             >
               <div class="flex items-center justify-center w-12 h-12 bg-white/10 rounded-xl mr-4 group-hover:bg-accent/20 transition-colors">
@@ -52,7 +52,7 @@
               </div>
               <div>
                 <div class="text-sm text-gray-300">Email</div>
-                <div class="font-semibold">geodimetr@op.pl</div>
+                <div class="font-semibold">{{ contact?.email }}</div>
               </div>
             </a>
 
@@ -62,8 +62,8 @@
               </div>
               <div>
                 <div class="text-sm text-gray-300">Adres</div>
-                <div class="font-semibold">ul. Sienkiewicza 36</div>
-                <div class="font-semibold">Zawiercie, woj. śląskie</div>
+                <div class="font-semibold">{{ contact?.addressLine1 }}</div>
+                <div class="font-semibold">{{ contact?.addressLine2 }}</div>
               </div>
             </div>
           </div>
@@ -71,14 +71,14 @@
           <!-- CTA buttons -->
           <div class="flex flex-col sm:flex-row gap-4">
             <a
-              href="tel:+48 602 319 486"
+              :href="'tel:' + contact?.phone?.replace(/\s/g, '')"
               class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold bg-accent text-accent-foreground hover:bg-accent/90 transition-colors"
             >
               Zadzwoń teraz
               <ArrowRight class="ml-2 w-5 h-5" />
             </a>
             <a
-              href="mailto:geodimetr@op.pl"
+              :href="'mailto:' + contact?.email"
               class="inline-flex items-center justify-center px-6 py-2.5 rounded-md text-base font-semibold border-2 border-white text-white hover:bg-white/10 transition-colors"
             >
               Wyślij email
@@ -180,9 +180,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { ArrowRight, Phone, Mail, MapPin } from 'lucide-vue-next'
 import emailjs from 'emailjs-com'
+import { useContentStore } from '@/stores/content'
+
+const store = useContentStore()
+const contact = computed(() => store.contactInfo)
 
 const form = ref({ name: '', phone: '', email: '', message: '' })
 const loading = ref(false)

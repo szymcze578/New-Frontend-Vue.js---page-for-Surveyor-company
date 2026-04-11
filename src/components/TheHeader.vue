@@ -26,22 +26,22 @@
         <nav class="hidden lg:flex items-center space-x-1">
           <button
             v-for="link in navLinks"
-            :key="link.id"
+            :key="link.sectionId"
             class="px-4 py-2 text-sm font-medium transition-colors rounded-lg cursor-pointer"
             :class="navBtnClass"
-            @click="scrollToSection(link.id)"
+            @click="scrollToSection(link.sectionId)"
           >
             {{ link.label }}
           </button>
         </nav>
         <div class="hidden lg:flex items-center space-x-4">
           <a
-            href="tel:+48 602 319 486"
+            :href="'tel:' + contact?.phone?.replace(/\s/g, '')"
             class="flex items-center text-sm transition-colors"
             :class="phoneClass"
           >
             <Phone class="w-4 h-4 mr-2" />
-            +48 602 319 486
+            {{ contact?.phone }}
           </a>
           <button
             class="inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer"
@@ -66,19 +66,19 @@
       <div class="px-4 py-6 space-y-3">
         <button
           v-for="link in navLinks"
-          :key="link.id"
+          :key="link.sectionId"
           class="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-accent hover:bg-muted rounded-lg transition-colors"
-          @click="scrollToSection(link.id)"
+          @click="scrollToSection(link.sectionId)"
         >
           {{ link.label }}
         </button>
         <div class="pt-4 space-y-3">
           <a
-            href="tel:+48 602 319 486"
+            :href="'tel:' + contact?.phone?.replace(/\s/g, '')"
             class="flex items-center justify-center px-4 py-2 text-sm text-muted-foreground hover:text-accent transition-colors"
           >
             <Phone class="w-4 h-4 mr-2" />
-            +48 602 319 486
+            {{ contact?.phone }}
           </a>
           <button
             class="w-full inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors bg-accent text-accent-foreground hover:bg-accent/90"
@@ -95,6 +95,11 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { Menu, X, Phone } from 'lucide-vue-next'
+import { useContentStore } from '@/stores/content'
+
+const store = useContentStore()
+const contact = computed(() => store.contactInfo)
+const navLinks = computed(() => store.navigation)
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -117,13 +122,6 @@ const scrollToSection = (id: string) => {
   }
 }
 
-const navLinks = [
-  { id: 'home', label: 'Start' },
-  { id: 'services', label: 'Usługi' },
-  { id: 'process', label: 'Jak działamy' },
-  { id: 'projects', label: 'Realizacje' },
-  { id: 'faq', label: 'FAQ' },
-]
 
 const navBtnClass = computed(() =>
   isScrolled.value
