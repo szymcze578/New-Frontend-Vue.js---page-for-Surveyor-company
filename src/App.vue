@@ -1,19 +1,31 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <TheHeader></TheHeader>
-    <RouterView class="flex-grow mb-8" v-slot="{ Component }">
-      <Transition name="page-slide" mode="out-in">
-        <component :is="Component" />
-      </Transition>
-    </RouterView>
+    <Hero/>
+    <TrustCards/>
+    <Services/>
+    <Process/>
+    <Advantages/>
+    <Projects/>
+    <!--<Opinions/>-->
+    <TheFAQ/>
+    <ContactCTA/>
     <TheFooter class="mt-auto"/>
   </div>
 </template>
 
 <script setup lang="ts">
-import TheHeader from './components/Header/TheHeader.vue'
-import TheFooter from './components/Footer/TheFooter.vue'
-import { RouterView } from 'vue-router'
+import TheHeader from './components/TheHeader.vue'
+import TheFooter from './components/TheFooter.vue'
+import TheFAQ from './components/TheFAQ.vue';
+import TrustCards from './components/TrustCards.vue';
+import Advantages from './components/Advantages.vue';
+import Hero from './components/Hero.vue';
+import Services from './components/Services.vue';
+import Process from './components/Process.vue';
+import ContactCTA from './components/ContactCTA.vue';
+import Opinions from './components/Opinions.vue';
+import Projects from './components/Projects.vue';
 </script>
 
 <style scoped>
