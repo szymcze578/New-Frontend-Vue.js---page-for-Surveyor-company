@@ -11,7 +11,7 @@
           class="stat-card group bg-white rounded-3xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border-2 border-transparent hover:border-accent/20"
         >
           <div class="flex items-center justify-center size-16 bg-linear-to-br from-accent to-accent/80 rounded-2xl mb-6 group-hover:scale-110 transition-transform shadow-lg shadow-accent/20">
-            <component :is="stat.icon" class="size-7 text-white" />
+            <component :is="getIcon(stat.iconName)" class="size-7 text-white" />
           </div>
           <div class="text-4xl font-bold bg-linear-to-br from-primary to-secondary bg-clip-text text-transparent mb-2">
             {{ stat.value }}
@@ -25,42 +25,14 @@
 </template>
 
 <script setup lang="ts">
-import { Target, Shield, Award, Clock, MapPin, FileText } from 'lucide-vue-next'
-import type { Component } from 'vue'
+import { computed } from 'vue'
+import { useContentStore } from '@/stores/content'
+import { useIconMap } from '@/composables/useIconMap'
 
-interface Stat {
-  icon: Component
-  value: string
-  label: string
-  description: string
-}
+const store = useContentStore()
+const { getIcon } = useIconMap()
 
-const stats: Stat[] = [
-  {
-    icon: Target,
-    value: '±2mm',
-    label: 'Dokładność pomiarów',
-    description: 'Najwyższa precyzja',
-  },
-  {
-    icon: Clock,
-    value: '6dni',
-    label: 'Dostępność w tygodniu',
-    description: 'Pon–Sb bez przestojów',
-  },
-  {
-    icon: FileText,
-    value: '1000+',
-    label: 'Wykonanych operatów',
-    description: 'Potwierdzona skuteczność',
-  },
-  {
-    icon: Award,
-    value: '30+',
-    label: 'Lat doświadczenia',
-    description: 'Sprawdzona jakość',
-  },
-]
+const stats = computed(() => store.trustStats)
 </script>
 
 <style scoped>

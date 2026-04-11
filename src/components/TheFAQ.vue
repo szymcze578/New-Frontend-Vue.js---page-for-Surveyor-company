@@ -62,40 +62,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { ChevronDown } from 'lucide-vue-next'
+import { useContentStore } from '@/stores/content'
 import SectionHeader from './widgets/SectionHeader.vue'
 
-const faqs = [
-  {
-    question: 'Ile kosztuje mapa do celów projektowych?',
-    answer: 'Koszt mapy zależy od wielkości działki, stopnia jej zabudowania i lokalizacji. Skontaktuj się z nami, aby otrzymać bezpłatną wycenę dostosowaną do Twojego przypadku.',
-  },
-  {
-    question: 'Jak długo trwa wykonanie dokumentacji geodezyjnej?',
-    answer: 'Standardowy czas realizacji zależy od zakresu koniecznych prac, którą możemy ocenić po pierwszym kontakcie.',
-  },
-  {
-    question: 'Jakie dokumenty są potrzebne do zlecenia usługi?',
-    answer: 'W większości przypadków wystarczy numer działki ewidencyjnej oraz dowód własności (wypis z księgi wieczystej lub akt notarialny). Konkretny zakres dokumentów ustalimy podczas pierwszego kontaktu.',
-  },
-  {
-    question: 'Czy mogę otrzymać dokumentację w formie elektronicznej?',
-    answer: 'Tak, wszystkie opracowania przekazujemy w formie papierowej oraz elektronicznej (PDF, DWG). Dodatkowo, na życzenie klienta, możemy dostarczyć dane w innych formatach używanych w projektowaniu.',
-  },
-  {
-    question: 'Czy obsługujecie tylko teren Zawiercia?',
-    answer: 'Głównie działamy w Zawierciu i okolicach (promień około 30 km), ale chętnie podejmiemy się realizacji projektów w całym województwie śląskim. Skontaktuj się z nami, aby omówić szczegóły.',
-  },
-  {
-    question: 'Co to jest wznowienie znaków granicznych?',
-    answer: 'Wznowienie to usługa polegająca na odtworzeniu i utrwaleniu granic działki na gruncie. Wykonuje się ją na podstawie danych archiwalnych będących w zasobach geodezyjnych. Dzięki temu dokładnie wiesz, gdzie przebiega granica Twojej nieruchomości.',
-  },
-  {
-    question: 'Jak wygląda proces podziału działki?',
-    answer: 'Proces składa się z kilku etapów: sporządzenie wstępnego projektu podziału, zgłoszenie prac geodezyjnych do odpowiednich instytucji, pomiary terenowe, przygotowanie mapy z projektem podziału nieruchomości. Cały proces zajmuje zwykle 3-4 miesiące.',
-  },
-]
+const store = useContentStore()
+
+const faqs = computed(() => store.faqs)
 
 const openIndex = ref<number | null>(null)
 

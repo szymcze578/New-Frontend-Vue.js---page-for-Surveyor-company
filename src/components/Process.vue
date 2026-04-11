@@ -46,10 +46,7 @@
             <div class="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
               <span class="text-lg font-bold text-accent-foreground">{{ step.number }}</span>
             </div>
-            <div class="flex items-center justify-center w-16 h-16 bg-accent/20 rounded-xl mb-6">
-              <component :is="step.icon" class="w-8 h-8 text-accent" />
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">{{ step.title }}</h3>
+            <h3 class="text-xl font-bold text-white mb-3 mt-4">{{ step.title }}</h3>
             <p class="text-gray-200 leading-relaxed">{{ step.description }}</p>
           </div>
         </div>
@@ -60,41 +57,11 @@
 
 
 <script setup lang="ts">
-import { Phone, FileCheck, MapPinned, CheckCircle2 } from 'lucide-vue-next'
-import type { Component } from 'vue'
+import { computed } from 'vue'
+import { useContentStore } from '@/stores/content'
 import SectionHeader from './widgets/SectionHeader.vue'
 
-interface Step {
-  icon: Component
-  number: string
-  title: string
-  description: string
-}
+const store = useContentStore()
 
-const steps: Step[] = [
-  {
-    icon: Phone,
-    number: '01',
-    title: 'Kontakt i wycena',
-    description: 'Skontaktuj się z nami telefonicznie lub przez formularz. Przedstawimy bezpłatną wycenę w 24h.',
-  },
-  {
-    icon: FileCheck,
-    number: '02',
-    title: 'Analiza dokumentacji',
-    description: 'Sprawdzamy dokumentację geodezyjną i ustalamy zakres niezbędnych prac pomiarowych.',
-  },
-  {
-    icon: MapPinned,
-    number: '03',
-    title: 'Pomiary w terenie',
-    description: 'Wykonujemy precyzyjne pomiary z wykorzystaniem nowoczesnego sprzętu geodezyjnego.',
-  },
-  {
-    icon: CheckCircle2,
-    number: '04',
-    title: 'Dokumentacja i odbiór',
-    description: 'Przygotowujemy kompletną dokumentację i przekazujemy do odpowiednich instytucji.',
-  },
-]
+const steps = computed(() => store.processSteps)
 </script>

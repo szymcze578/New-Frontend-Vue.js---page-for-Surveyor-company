@@ -63,45 +63,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { Star, Quote } from 'lucide-vue-next'
-import SectionHeader from './widgets/SectionHeader.vue';
+import { useContentStore } from '@/stores/content'
+import SectionHeader from './widgets/SectionHeader.vue'
 
-const testimonials = [
-  {
-    name: 'Anna Kowalska',
-    role: 'Właścicielka działki',
-    content: 'Profesjonalna obsługa od początku do końca. Pan geodeta dokładnie wyjaśnił cały proces i wykonał wszystko terminowo. Polecam!',
-    rating: 5,
-  },
-  {
-    name: 'Piotr Nowak',
-    role: 'Deweloper',
-    content: 'Współpracujemy od 3 lat przy różnych inwestycjach. Zawsze można liczyć na fachowość, precyzję i dotrzymywanie terminów. Najlepsza firma geodezyjna w okolicy.',
-    rating: 5,
-  },
-  {
-    name: 'Maria Wiśniewska',
-    role: 'Inwestor indywidualny',
-    content: 'Potrzebowałam pilnie mapy do projektu budowlanego. Wszystko zostało zrobione w ekspresowym tempie bez utraty jakości. Gorąco polecam!',
-    rating: 5,
-  },
-  {
-    name: 'Tomasz Lewandowski',
-    role: 'Firma budowlana',
-    content: 'Kompleksowa obsługa geodezyjna naszych budów. Nowoczesny sprzęt, szybka realizacja i konkurencyjne ceny. Jesteśmy bardzo zadowoleni.',
-    rating: 5,
-  },
-  {
-    name: 'Janina Dąbrowska',
-    role: 'Klient prywatny',
-    content: 'Bardzo miła i pomocna obsługa. Pan geodeta cierpliwie odpowiadał na wszystkie pytania i doradzał najlepsze rozwiązania. Dziękuję!',
-    rating: 5,
-  },
-  {
-    name: 'Krzysztof Zieliński',
-    role: 'Architekt',
-    content: 'Współpraca na najwyższym poziomie. Dokładne mapy, profesjonalne podejście i terminowość. Polecam każdemu, kto potrzebuje solidnej usługi geodezyjnej.',
-    rating: 5,
-  },
-]
+const store = useContentStore()
+
+const testimonials = computed(() => store.testimonials)
 </script>

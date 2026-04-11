@@ -41,7 +41,7 @@
         >
           <div class="relative h-64 overflow-hidden">
             <img
-              :src="project.image"
+              :src="project.imageUrl"
               :alt="project.title"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
@@ -65,60 +65,21 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
+import { useContentStore } from '@/stores/content'
 import SectionHeader from './widgets/SectionHeader.vue'
 
-const projects = [
-  {
-    image: 'https://images.unsplash.com/photo-1693019108329-1889fb170f2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    title: 'Drogi gminne w Szczekocinach',
-    category: 'Infrastruktura',
-    description: 'Obsługa geodezyjna budowy i przebudowy dróg gminnych i powiatowych',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    title: 'Hale magazynowe – ul. Technologiczna, Zawiercie',
-    category: 'Komercyjna',
-    description: 'Kompleksowa obsługa geodezyjna budowy obiektów magazynowego',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1565008447742-97f6f38c985c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    title: 'Obsługa inwestycji przemysłowych Zawiercie',
-    category: 'Przemysłowa',
-    description: 'Wieloetapowa obsługa geodezyjna zakładów przemysłowych',
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1662924365620-353b5e991a9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXlpbmclMjBlcXVpcG1lbnQlMjBjb25zdHJ1Y3Rpb24lMjBzaXRlfGVufDF8fHx8MTc3NTQ3MTkxMnww&ixlib=rb-4.1.0&q=80&w=1080',
-    title: 'Budownictwo jednorodzinne – województwo Śląskie',
-    category: 'Budownictwo',
-    description: 'Kompleksowa obsługa geodezyjna budowy domu jednorodzinnego dla klientów prywatnych',
-  },
-  // {
-  //   image: 'https://images.unsplash.com/photo-1773299567657-a4bf83503ce5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYW5kJTIwcHJvcGVydHklMjBib3VuZGFyeSUyMHN1cnZleXxlbnwxfHx8fDE3NzU0NzE5MTN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  //   title: 'Podziały działek - ul. Leśna',
-  //   category: 'Podziały',
-  //   description: 'Podział nieruchomości na 12 działek budowlanych',
-  // },
-  // {
-  //   image: 'https://images.unsplash.com/photo-1723367194881-fe2e53534170?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwYWVyaWFsJTIwdmlld3xlbnwxfHx8fDE3NzU0MjcxMjh8MA&ixlib=rb-4.1.0&q=80&w=1080',
-  //   title: 'Droga gminna Zawiercie-Kromołów',
-  //   category: 'Infrastruktura',
-  //   description: 'Projektowanie i realizacja drogi gminnej',
-  // },
-  {
-    image: 'https://images.unsplash.com/photo-1659560727750-d76cfe133c92?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-    title: 'Pomiar i inwentaryzacja sieci elektroenergetycznych',
-    category: 'Infrastruktura',
-    description: 'Geodezyjny pomiar przebiegu sieci energetycznej wraz z dokumentacją powykonawczą',
-  }
-]
+const store = useContentStore()
 
-const categories = ['Wszystkie', 'Komercyjna', 'Infrastruktura', 'Budownictwo', 'Przemysłowa']
+const categories = computed(() => [
+  'Wszystkie',
+  ...new Set(store.projects.map(p => p.category))
+])
 
 const selectedCategory = ref('Wszystkie')
 
 const filteredProjects = computed(() =>
   selectedCategory.value === 'Wszystkie'
-    ? projects
-    : projects.filter((p) => p.category === selectedCategory.value)
+    ? store.projects
+    : store.projects.filter((p) => p.category === selectedCategory.value)
 )
 </script>

@@ -22,7 +22,7 @@
 
           <!-- Icon -->
           <div class="relative flex items-center justify-center w-16 h-16 bg-linear-to-br from-accent to-accent/80 rounded-2xl mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-accent/20">
-            <component :is="advantage.icon" class="w-7 h-7 text-white" />
+            <component :is="getIcon(advantage.iconName)" class="w-7 h-7 text-white" />
           </div>
 
           <!-- Content -->
@@ -36,46 +36,13 @@
 </template>
 
 <script setup lang="ts">
-import { Sparkles, Headphones, BadgeCheck, Zap, Users, Globe } from 'lucide-vue-next'
-import type { Component } from 'vue'
+import { computed } from 'vue'
+import { useContentStore } from '@/stores/content'
+import { useIconMap } from '@/composables/useIconMap'
 import SectionHeader from './widgets/SectionHeader.vue'
 
-interface Advantage {
-  icon: Component
-  title: string
-  description: string
-}
+const store = useContentStore()
+const { getIcon } = useIconMap()
 
-const advantages: Advantage[] = [
-  {
-    icon: Sparkles,
-    title: 'Najnowsza technologia',
-    description: 'Nowoczesny sprzęt geodezyjny zapewniający najwyższą precyzję pomiarów.',
-  },
-  {
-    icon: Headphones,
-    title: 'Kompleksowa obsługa',
-    description: 'Od konsultacji po finalizację - jesteśmy z Tobą na każdym etapie.',
-  },
-  {
-    icon: BadgeCheck,
-    title: 'Uprawnienia i certyfikaty',
-    description: 'Posiadamy pełne uprawnienia zawodowe i wymagane certifikaty.',
-  },
-  {
-    icon: Zap,
-    title: 'Szybka realizacja',
-    description: 'Ekspresowe terminy bez kompromisów w zakresie jakości wykonania.',
-  },
-  {
-    icon: Users,
-    title: 'Doświadczony zespół',
-    description: 'Wykwalifikowani geodeci z wieloletnim doświadczeniem w branży.',
-  },
-  {
-    icon: Globe,
-    title: 'Lokalna obecność',
-    description: 'Doskonała znajomość terenu Zawiercia i okolic - szybki dojazd.',
-  },
-]
+const advantages = computed(() => store.advantages)
 </script>
