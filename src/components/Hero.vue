@@ -43,7 +43,7 @@
             class="flex items-center space-x-2 mb-6"
           >
             <MapPin class="w-5 h-5 text-accent" />
-            <span class="text-sm font-medium text-accent">Zawiercie i okolice</span>
+            <span class="text-sm font-medium text-accent">{{ hero?.locationLabel }}</span>
           </div>
 
           <h1
@@ -52,8 +52,7 @@
             :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 300 } }"
             class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
           >
-            Profesjonalne usługi geodezyjne
-            <span class="block text-accent mt-2">z precyzją i pasją</span>
+            {{ hero?.headline }}
           </h1>
 
           <p
@@ -62,8 +61,7 @@
             :enter="{ opacity: 1, y: 0, transition: { duration: 800, delay: 400 } }"
             class="text-lg text-gray-200 mb-8 leading-relaxed"
           >
-            Nowoczesna geodezja wsparta najnowszymi technologiami pomiarowymi.
-            Zapewniamy dokładność, terminowość i kompleksową obsługę dla każdego projektu.
+            {{ hero?.subheading }}
           </p>
 
           <div
@@ -95,7 +93,7 @@
             class="mt-12 pt-8 border-t border-white/20"
           >
             <div class="grid grid-cols-3 gap-6">
-              <div v-for="stat in trustStats" :key="stat.value">
+              <div v-for="stat in hero?.stats ?? []" :key="stat.value">
                 <div class="text-3xl font-bold text-accent mb-1">{{ stat.value }}</div>
                 <div class="text-sm text-gray-300">{{ stat.label }}</div>
               </div>
@@ -146,7 +144,12 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { ArrowRight, MapPin } from 'lucide-vue-next'
+import { useContentStore } from '@/stores/content'
+
+const store = useContentStore()
+const hero = computed(() => store.hero)
 
 const scrollToSection = (id: string) => {
   const element = document.getElementById(id)
@@ -157,12 +160,6 @@ const scrollToSection = (id: string) => {
     window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
   }
 }
-
-const trustStats = [
-  { value: '30+', label: 'Lat doświadczenia' },
-  { value: '1000+', label: 'Zleceń' },
-  { value: '100%', label: 'Zadowolenie' },
-]
 
 const imgSrc = 'https://images.unsplash.com/photo-1610081339709-d86503fcaf15?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXJ2ZXlvciUyMGdlb2RldGljJTIwZXF1aXBtZW50JTIwcHJlY2lzaW9uJTIwbWVhc3VyZW1lbnR8ZW58MXx8fHwxNzc1NTQ4MzExfDA&ixlib=rb-4.1.0&q=80&w=1080'
 
