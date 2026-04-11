@@ -23,7 +23,7 @@
           <div class="relative">
             <!-- Icon -->
             <div class="flex items-center justify-center size-16 bg-linear-to-br from-accent/10 to-secondary/10 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
-              <component :is="service.icon" class="size-8 text-accent" />
+              <component :is="getIcon(service.iconName)" class="size-8 text-accent" />
             </div>
 
             <!-- Title -->
@@ -54,53 +54,13 @@
 </template>
 
 <script setup lang="ts">
-import { Home, Building2, Map, FileText, Ruler, TrendingUp } from 'lucide-vue-next'
-import type { Component } from 'vue'
+import { computed } from 'vue'
+import { useContentStore } from '@/stores/content'
+import { useIconMap } from '@/composables/useIconMap'
 import SectionHeader from './widgets/SectionHeader.vue'
 
-interface Service {
-  icon: Component
-  title: string
-  description: string
-  features: string[]
-}
+const store = useContentStore()
+const { getIcon } = useIconMap()
 
-const services: Service[] = [
-  {
-    icon: Home,
-    title: 'Mapy do celów projektowych',
-    description: 'Precyzyjne mapy jako podstawa dla projektów budowlanych i architektonicznych.',
-    features: ['Mapa do projektu budowlanego', 'Inwentaryzacja powykonawcza', 'Mapa zasadnicza'],
-  },
-  {
-    icon: Building2,
-    title: 'Usługi dla deweloperów',
-    description: 'Kompleksowa obsługa geodezyjna dla inwestycji mieszkaniowych i komercyjnych.',
-    features: ['Wytyczenie obiektów', 'Pomiary kontrolne', 'Nadzór geodezyjny','Inwentaryzacja powykonawcza'],
-  },
-  {
-    icon: Map,
-    title: 'Podziały nieruchomości',
-    description: 'Profesjonalne podziały działek zgodne z prawem geodezyjnym i kartograficznym.',
-    features: ['Podział nieruchomości', 'Podział nieruchomości w terenach rolnych i leśnych', 'Scalenia gruntów'],
-  },
-  {
-    icon: FileText,
-    title: 'Ewidencja gruntów i budynków',
-    description: 'Prace związane z pomiarem granic nieruchomości',
-    features: ['Wznowienie znaków granicznych','Wyznaczenie punktów granicznych', 'Ustalenie przebiegu granic', 'Rozgraniczenie nieruchomości'],
-  },
-  {
-    icon: Ruler,
-    title: 'Pomiary sytuacyjno-wysokościowe',
-    description: 'Szczegółowe pomiary terenu dla celów projektowych i inwentaryzacyjnych.',
-    features: ['Pomiar niwelacyjny', 'Tachimetria','Pomiary metodą GPS'],
-  },
-  {
-    icon: TrendingUp,
-    title: 'Obsługa inwestycji',
-    description: 'Geodezyjne wsparcie inwestycji od etapu projektu po odbiór końcowy.',
-    features: ['Geodezyjna obsługa budowy', 'Inwentaryzacja obiektów', ],
-  },
-]
+const services = computed(() => store.services)
 </script>
