@@ -5,7 +5,7 @@ import { schemaTypes } from './schemas'
 export default defineConfig({
   name: 'geodimetr',
   title: 'Geodimetr CMS',
-  projectId: '<YOUR_PROJECT_ID>',
+  projectId: '9v249zkp',
   dataset: 'production',
   plugins: [structureTool()],
   schema: {
