@@ -1,12 +1,6 @@
 <template>
   <section id="process" class="py-24 bg-linear-to-br from-primary via-[#0a4f65] to-secondary relative overflow-hidden">
-
-    <!-- Background grid pattern -->
-    <div
-      class="absolute inset-0 opacity-[0.03]"
-      style="background-image: linear-gradient(#F78C6A 1px, transparent 1px), linear-gradient(90deg, #F78C6A 1px, transparent 1px); background-size: 60px 60px;"
-    />
-
+    <BackgroundGrid :grid-width="60" :grid-height="60" />
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeader
         :badge="store.sectionHeaders?.process?.badge ?? ''"
@@ -46,7 +40,11 @@
             <div class="absolute -top-4 -right-4 w-12 h-12 bg-accent rounded-full flex items-center justify-center">
               <span class="text-lg font-bold text-accent-foreground">{{ step.number }}</span>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3 mt-4">{{ step.title }}</h3>
+            <!-- Icon -->
+            <div class="flex items-center justify-center w-16 h-16 bg-accent/20 rounded-xl mb-6">
+              <component :is="getIcon(step.iconName)" class="w-8 h-8 text-accent" />
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{{ step.title }}</h3>
             <p class="text-gray-200 leading-relaxed">{{ step.description }}</p>
           </div>
         </div>
@@ -59,9 +57,12 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useContentStore } from '@/stores/content'
+import { useIconMap } from '@/composables/useIconMap'
 import SectionHeader from './widgets/SectionHeader.vue'
+import BackgroundGrid from './widgets/BackgroundGrid.vue'
 
 const store = useContentStore()
+const { getIcon } = useIconMap()
 
 const steps = computed(() => store.processSteps)
 </script>

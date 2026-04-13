@@ -1,11 +1,7 @@
 <template>
   <section id="contact" class="py-24 bg-linear-to-br from-primary via-[#0a4f65] to-secondary relative overflow-hidden">
 
-    <!-- Background pattern -->
-    <div
-      class="absolute inset-0 opacity-[0.03]"
-      style="background-image: linear-gradient(#F78C6A 1px, transparent 1px), linear-gradient(90deg, #F78C6A 1px, transparent 1px); background-size: 60px 60px;"
-    />
+    <BackgroundGrid :grid-width="60" :grid-height="60" />
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
@@ -184,6 +180,7 @@ import { ref, computed } from 'vue'
 import { ArrowRight, Phone, Mail, MapPin } from 'lucide-vue-next'
 import emailjs from 'emailjs-com'
 import { useContentStore } from '@/stores/content'
+import BackgroundGrid from './widgets/BackgroundGrid.vue'
 
 const store = useContentStore()
 const contact = computed(() => store.contactInfo)

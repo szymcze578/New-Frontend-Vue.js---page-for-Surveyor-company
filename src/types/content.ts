@@ -26,6 +26,7 @@ export interface TrustStat {
 
 export interface ProcessStep {
   number: string
+  iconName: string
   title: string
   description: string
 }

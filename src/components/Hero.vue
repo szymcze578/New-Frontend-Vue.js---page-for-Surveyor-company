@@ -16,11 +16,7 @@
       </svg>
     </div>
 
-    <!-- Grid overlay -->
-    <div
-      class="absolute inset-0 opacity-[0.03]"
-      style="background-image: linear-gradient(#F78C6A 1px, transparent 1px), linear-gradient(90deg, #F78C6A 1px, transparent 1px); background-size: 50px 50px;"
-    />
+    <BackgroundGrid :grid-width="50" :grid-height="50" />
 
     <!-- Gradient orbs -->
     <div class="absolute top-1/4 -left-32 size-96 bg-accent/10 rounded-full blur-3xl" />
@@ -148,6 +144,7 @@
 import { computed } from 'vue'
 import { ArrowRight, MapPin } from 'lucide-vue-next'
 import { useContentStore } from '@/stores/content'
+import BackgroundGrid from './widgets/BackgroundGrid.vue'
 
 const store = useContentStore()
 const hero = computed(() => store.hero)

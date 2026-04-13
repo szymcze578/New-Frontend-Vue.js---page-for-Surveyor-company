@@ -19,7 +19,7 @@ const GROQ_QUERY = `{
     iconName, value, label, description
   },
   "processSteps": *[_type == "processStep"] | order(order asc){
-    number, title, description
+    number, iconName, title, description
   },
   "advantages": *[_type == "advantage"] | order(order asc){
     iconName, title, description
