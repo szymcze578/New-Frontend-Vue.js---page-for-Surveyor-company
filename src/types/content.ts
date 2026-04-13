@@ -62,6 +62,21 @@ export interface ContactInfo {
   addressLine2: string
 }
 
+export interface SectionHeader {
+  badge: string
+  title: string
+  description: string
+}
+
+export interface SectionHeaders {
+  services: SectionHeader
+  process: SectionHeader
+  advantages: SectionHeader
+  projects: SectionHeader
+  opinions: SectionHeader
+  faq: SectionHeader
+}
+
 export interface NavLink {
   label: string
   sectionId: string
@@ -87,4 +102,5 @@ export interface SiteContent {
   contactInfo: ContactInfo
   navigation: NavLink[]
   footer: FooterContent
+  sectionHeaders: SectionHeaders
 }

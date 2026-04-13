@@ -2,9 +2,9 @@
   <section id="projects" class="py-24 bg-muted">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeader
-        badge="Portfolio"
-        title="Zrealizowane projekty"
-        description="Poznaj wybrane realizacje z naszego bogatego portfolio"
+        :badge="store.sectionHeaders?.projects?.badge ?? ''"
+        :title="store.sectionHeaders?.projects?.title ?? ''"
+        :description="store.sectionHeaders?.projects?.description ?? ''"
       />
 
       <!-- Category Filter -->

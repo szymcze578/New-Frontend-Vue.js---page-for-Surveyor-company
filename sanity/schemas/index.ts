@@ -8,6 +8,7 @@ import { faqItemSchema } from './faqItem'
 import { testimonialSchema } from './testimonial'
 import { contactInfoSchema } from './contactInfo'
 import { navigationSchema } from './navigation'
+import { sectionHeadersSchema } from './sectionHeaders'
 
 export const schemaTypes = [
   heroSchema,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   testimonialSchema,
   contactInfoSchema,
   navigationSchema,
+  sectionHeadersSchema,
 ]

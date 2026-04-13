@@ -9,9 +9,9 @@
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeader
-        badge="Jak działamy"
-        title="Prosty proces współpracy"
-        description="W 4 krokach od zgłoszenia do gotowej dokumentacji"
+        :badge="store.sectionHeaders?.process?.badge ?? ''"
+        :title="store.sectionHeaders?.process?.title ?? ''"
+        :description="store.sectionHeaders?.process?.description ?? ''"
         badge-class="bg-white/10"
         badge-label-class="text-accent"
         title-class="text-white"

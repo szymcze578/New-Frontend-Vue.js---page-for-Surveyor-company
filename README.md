@@ -2,72 +2,104 @@
 
 ![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D)
 ![Vite](https://img.shields.io/badge/Vite-Latest-646CFF)
-![Status](https://img.shields.io/badge/Status-Under%20Development-orange)
+![Sanity](https://img.shields.io/badge/CMS-Sanity-F03E2F)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6)
 ![License](https://img.shields.io/badge/License-Proprietary-red)
 
-> 🚧 **Project Status**: Under modernization and active development
-
-A modern, responsive website for **Geodimetr**, a professional geodetic surveying company based in Zawiercie, Silesia, Poland.
-
-## Quick Overview
-
-**Geodimetr** provides comprehensive geodetic services including:
-- Precise land surveying and measurements
-- Cartographic mapping and project maps
-- Boundary demarcation and restoration
-- Construction site monitoring
-- Services for both individual clients and commercial enterprises
+A modern, responsive single-page website for **Geodimetr**, a professional geodetic surveying company based in Zawiercie, Silesia, Poland. All content is managed via Sanity CMS.
 
 ## Tech Stack
 
-- **Vue.js 3** - Progressive JavaScript framework
-- **Vite** - Next-generation build tool
-- **TypeScript** - Type-safe development
-- **Tailwind CSS** - Utility-first CSS framework
-- **Vue Router** - Client-side routing
+| Layer | Technology |
+|---|---|
+| Framework | Vue 3 (Composition API + `<script setup>`) |
+| Build tool | Vite |
+| Styling | Tailwind CSS v4 |
+| State management | Pinia |
+| CMS | Sanity (studio in `sanity/`) |
+| Animations | @vueuse/motion |
+| Icons | Lucide Vue Next |
+| Maps | @fawmi/vue-google-maps |
+| Deployment | Railway |
 
-##  Getting Started
+## Getting Started
 
-### Install Dependencies
+### Prerequisites
+
+Create a `.env.local` file in the project root:
+
+```env
+VITE_SANITY_PROJECT_ID=your_project_id
+VITE_SANITY_DATASET=production
+VITE_GOOGLE_API_KEY=your_google_maps_api_key
+```
+
+### Install & run
+
 ```bash
+# Install Vue app dependencies
 npm install
-```
 
-### Development Server
-```bash
+# Start Vue dev server (http://localhost:3000)
 npm run dev
+
+# Install Sanity Studio dependencies
+cd sanity && npm install
+
+# Start Sanity Studio (http://localhost:3333)
+cd sanity && npm run dev
 ```
 
-### Build for Production
+### Build for production
+
 ```bash
 npm run build
 ```
 
-## Pages
+## Project Structure
 
-- **Home** (`/`) - Hero carousel, service highlights
-- **Services** (`/services`) - Detailed service offerings
-- **About** (`/about`) - Company information and achievements
-- **Contact** (`/contact`) - Location map and contact form
+```
+├── src/
+│   ├── components/        # Page sections (TheHeader, Hero, Services, etc.)
+│   │   └── widgets/       # Reusable sub-components (SectionHeader, etc.)
+│   ├── composables/
+│   │   └── useIconMap.ts  # Maps CMS icon name strings to Lucide components
+│   ├── lib/
+│   │   └── sanity.ts      # Sanity client + image URL builder
+│   ├── stores/
+│   │   └── content.ts     # Pinia store — fetches all content via single GROQ query
+│   ├── types/
+│   │   └── content.ts     # TypeScript interfaces for all content types
+│   └── assets/
+│       └── theme.css      # CSS custom properties / design tokens
+├── sanity/
+│   ├── schemas/           # Sanity document type definitions
+│   └── sanity.config.ts   # Studio configuration
+```
 
-## Next Steps - Planned Features
+## CMS Content Types
 
-###  Priority: CMS Integration
-The next major step is to implement a **Content Management System (CMS)** to:
-- Allow non-technical team members to modify website content
-- Simplify service descriptions and pricing updates
-- Manage testimonials and case studies
-- Update company information without code changes
-- Streamline content maintenance
+All page content is managed in Sanity Studio at http://localhost:3333.
 
-##  Development Status
+| Document | Type | Description |
+|---|---|---|
+| Hero | singleton | Headline, subheading, location, stats |
+| Usługi (Services) | list | Geodetic service cards with icon, features |
+| Statystyki (Trust Stats) | list | Key numbers/stats cards |
+| Kroki procesu (Process) | list | Step-by-step process |
+| Atuty (Advantages) | list | Why-choose-us cards |
+| Projekty (Projects) | list | Portfolio items with image |
+| FAQ | list | Questions & answers |
+| Opinie (Testimonials) | list | Client reviews |
+| Dane kontaktowe | singleton | Phone, email, address |
+| Nawigacja i Stopka | singleton | Nav links, footer description, Facebook URL |
+| Nagłówki sekcji | singleton | Badge/title/description for each section |
 
-- ✅ Core pages and navigation
-- ✅ Responsive design (mobile-first)
-- ✅ Contact form with email integration
+## Development Status
+
+- ✅ Single-page responsive layout
+- ✅ Sanity CMS integration (all content managed via Studio)
 - ✅ Google Maps integration
-- ✅ Service showcase and carousel
-- ⏳ **In Progress**: Performance optimizations
-- 🔄 **Planned**: CMS implementation
-- 🔄 **Planned**: Multi-language support (PL/EN)
-- 🔄 **Planned**: Analytics integration
+- ✅ Scroll-triggered animations
+- ✅ Mobile navigation
+- ✅ Contact form

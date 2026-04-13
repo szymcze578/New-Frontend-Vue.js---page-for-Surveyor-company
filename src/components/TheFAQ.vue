@@ -2,9 +2,9 @@
   <section id="faq" class="py-24 bg-muted">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeader
-        badge="Pytania i odpowiedzi"
-        title="Najczęściej zadawane pytania"
-        description="Znajdź odpowiedzi na popularne pytania dotyczące usług geodezyjnych"
+        :badge="store.sectionHeaders?.faq?.badge ?? ''"
+        :title="store.sectionHeaders?.faq?.title ?? ''"
+        :description="store.sectionHeaders?.faq?.description ?? ''"
         description-class="text-muted-foreground"
       />
 

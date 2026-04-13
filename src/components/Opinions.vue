@@ -2,9 +2,9 @@
   <section id="testimonials" class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeader
-        badge="Opinie klientów"
-        title="Co mówią o nas klienci?"
-        description="Zadowolenie naszych klientów jest naszym największym sukcesem"
+        :badge="store.sectionHeaders?.opinions?.badge ?? ''"
+        :title="store.sectionHeaders?.opinions?.title ?? ''"
+        :description="store.sectionHeaders?.opinions?.description ?? ''"
       />
 
       <!-- Testimonials Grid -->

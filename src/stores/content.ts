@@ -4,7 +4,7 @@ import { sanityClient } from '@/lib/sanity'
 import type {
   SiteContent, HeroContent, Service, TrustStat, ProcessStep,
   Advantage, Project, FaqItem, Testimonial, ContactInfo,
-  NavLink, FooterContent,
+  NavLink, FooterContent, SectionHeaders,
 } from '@/types/content'
 
 const GROQ_QUERY = `{
@@ -42,6 +42,9 @@ const GROQ_QUERY = `{
     "footerServiceLinks": footerServiceLinks[],
     facebookUrl,
     copyrightName
+  },
+  "sectionHeaders": *[_type == "sectionHeaders"][0]{
+    services, process, advantages, projects, opinions, faq
   }
 }`
 
@@ -60,6 +63,7 @@ export const useContentStore = defineStore('content', () => {
   const contactInfo = ref<ContactInfo | null>(null)
   const navigation = ref<NavLink[]>([])
   const footer = ref<FooterContent | null>(null)
+  const sectionHeaders = ref<SectionHeaders | null>(null)
 
   async function fetchAll() {
     if (status.value === 'ready' || status.value === 'loading') return
@@ -75,11 +79,12 @@ export const useContentStore = defineStore('content', () => {
       faqs.value = data.faqs
       testimonials.value = data.testimonials
       contactInfo.value = data.contactInfo
-      navigation.value = data.navigation
+      navigation.value = (data.navigation as any)?.navLinks ?? []
+      sectionHeaders.value = data.sectionHeaders ?? null
       if (data.navigation) {
         footer.value = {
           description: (data as any).navigation.footerDescription ?? '',
-          quickLinks: data.navigation as unknown as NavLink[],
+          quickLinks: (data.navigation as any)?.navLinks ?? [],
           serviceLinks: (data as any).navigation.footerServiceLinks ?? [],
           facebookUrl: (data as any).navigation.facebookUrl ?? '',
           copyrightName: (data as any).navigation.copyrightName ?? 'Geodimetr',
@@ -92,5 +97,5 @@ export const useContentStore = defineStore('content', () => {
     }
   }
 
-  return { status, error, hero, services, trustStats, processSteps, advantages, projects, faqs, testimonials, contactInfo, navigation, footer, fetchAll }
+  return { status, error, hero, services, trustStats, processSteps, advantages, projects, faqs, testimonials, contactInfo, navigation, footer, sectionHeaders, fetchAll }
 })

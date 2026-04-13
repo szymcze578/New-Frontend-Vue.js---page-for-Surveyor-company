@@ -53,6 +53,7 @@
             class="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
           >
             {{ hero?.headline }}
+             <span class="block text-accent mt-2">z precyzją i pasją</span>
           </h1>
 
           <p

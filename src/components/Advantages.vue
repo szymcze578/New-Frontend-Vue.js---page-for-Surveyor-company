@@ -2,9 +2,9 @@
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeader
-        badge="Nasze atuty"
-        title="Dlaczego warto nas wybrać?"
-        description="Łączymy najwyższe standardy z indywidualnym podejściem do każdego klienta"
+        :badge="store.sectionHeaders?.advantages?.badge ?? ''"
+        :title="store.sectionHeaders?.advantages?.title ?? ''"
+        :description="store.sectionHeaders?.advantages?.description ?? ''"
       />
 
       <!-- Advantages Grid -->
