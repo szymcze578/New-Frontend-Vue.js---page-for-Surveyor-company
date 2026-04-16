@@ -10,6 +10,7 @@ import { MotionPlugin } from '@vueuse/motion';
 import  VueTypedJs  from 'vue3-typed-js';
 
 import VueGoogleMaps from '@fawmi/vue-google-maps'
+import TrustCard from './components/TrustSection/TrustCard.vue';
 
 const app = createApp(App)
 
@@ -23,5 +24,7 @@ app.use(createPinia())
 app.use(router)
 app.use(MotionPlugin)
 app.use(VueTypedJs)
+
+app.component("TrustCard", TrustCard)
 
 app.mount('#app')
