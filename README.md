@@ -19,7 +19,7 @@ A modern, responsive single-page website for **Geodimetr**, a professional geode
 | CMS | Sanity (studio in `sanity/`) |
 | Animations | @vueuse/motion |
 | Icons | Lucide Vue Next |
-| Maps | @fawmi/vue-google-maps |
+| Contact form | EmailJS (`emailjs-com`) |
 | Deployment | Railway |
 
 ## Getting Started
@@ -31,7 +31,9 @@ Create a `.env.local` file in the project root:
 ```env
 VITE_SANITY_PROJECT_ID=your_project_id
 VITE_SANITY_DATASET=production
-VITE_GOOGLE_API_KEY=your_google_maps_api_key
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
 ```
 
 ### Install & run
@@ -60,21 +62,30 @@ npm run build
 
 ```
 ├── src/
-│   ├── components/        # Page sections (TheHeader, Hero, Services, etc.)
-│   │   └── widgets/       # Reusable sub-components (SectionHeader, etc.)
+│   ├── components/             # Page sections and their sub-components
+│   │   ├── Header/             # CompanyLogo, NavigationButton, DesktopActions, MobileMenu
+│   │   ├── TrustSection/       # TrustCards, TrustCard
+│   │   ├── Services/           # ServiceCard
+│   │   ├── Process/            # ProcessCard
+│   │   ├── Advantages/         # AdvantageCard
+│   │   ├── ContactCTA/         # ContactInfoPanel, ContactForm, ContactDetailItem
+│   │   └── widgets/            # Shared sub-components (SectionHeader, BackgroundGrid)
 │   ├── composables/
-│   │   └── useIconMap.ts  # Maps CMS icon name strings to Lucide components
+│   │   └── useIconMap.ts       # Maps CMS icon name strings to Lucide components
 │   ├── lib/
-│   │   └── sanity.ts      # Sanity client + image URL builder
+│   │   └── sanity.ts           # Sanity client + image URL builder
 │   ├── stores/
-│   │   └── content.ts     # Pinia store — fetches all content via single GROQ query
+│   │   └── content.ts          # Pinia store — fetches all content via single GROQ query
 │   ├── types/
-│   │   └── content.ts     # TypeScript interfaces for all content types
+│   │   └── content.ts          # TypeScript interfaces for all content types
 │   └── assets/
-│       └── theme.css      # CSS custom properties / design tokens
+│       └── theme.css           # CSS custom properties / design tokens
 ├── sanity/
-│   ├── schemas/           # Sanity document type definitions
-│   └── sanity.config.ts   # Studio configuration
+│   ├── schemas/
+│   │   ├── shared/
+│   │   │   └── iconOptions.ts  # Unified icon list shared across all schemas
+│   │   └── *.ts                # Document type definitions
+│   └── sanity.config.ts        # Studio configuration
 ```
 
 ## CMS Content Types
@@ -95,11 +106,12 @@ All page content is managed in Sanity Studio at http://localhost:3333.
 | Nawigacja i Stopka | singleton | Nav links, footer description, Facebook URL |
 | Nagłówki sekcji | singleton | Badge/title/description for each section |
 
+Icon names in all document types are drawn from a single shared list (`schemas/shared/iconOptions.ts`) that maps to the Lucide icons registered in `useIconMap.ts`.
+
 ## Development Status
 
 - ✅ Single-page responsive layout
 - ✅ Sanity CMS integration (all content managed via Studio)
-- ✅ Google Maps integration
 - ✅ Scroll-triggered animations
 - ✅ Mobile navigation
-- ✅ Contact form
+- ✅ Contact form (EmailJS)
