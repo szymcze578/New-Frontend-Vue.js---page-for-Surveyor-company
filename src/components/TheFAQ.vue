@@ -7,8 +7,6 @@
         :description="store.sectionHeaders?.faq?.description ?? ''"
         description-class="text-muted-foreground"
       />
-
-      <!-- FAQ List -->
       <div class="space-y-4">
         <div
           v-for="(faq, index) in faqs"
@@ -38,8 +36,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Contact CTA -->
       <div
         v-motion
         :initial="{ opacity: 0, y: 20 }"
