@@ -7,50 +7,25 @@
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <div class="flex items-center">
-          <div class="flex flex-col">
-            <span
-              class="text-xl font-bold tracking-tight transition-colors"
-              :class="logoTextClass"
-            >
-              <span class="text-accent">GEO</span>DIMETR
-            </span>
-            <span
-              class="text-xs transition-colors"
-              :class="logoSubtitleClass"
-            >
-              mgr inż. Mariusz Czech
-            </span>
-          </div>
-        </div>
+        <CompanyLogo 
+          :logo-text-class="logoTextClass" 
+          :logo-subtitle-class="logoSubtitleClass"
+        />
         <nav class="hidden lg:flex items-center space-x-1">
-          <button
+          <NavigationButton
             v-for="link in navLinks"
             :key="link.sectionId"
-            class="px-4 py-2 text-sm font-medium transition-colors rounded-lg cursor-pointer"
-            :class="navBtnClass"
+            :label="link.label"
+            :style-class="navBtnClass"
             @click="scrollToSection(link.sectionId)"
-          >
-            {{ link.label }}
-          </button>
+          />
         </nav>
-        <div class="hidden lg:flex items-center space-x-4">
-          <a
-            :href="'tel:' + contact?.phone?.replace(/\s/g, '')"
-            class="flex items-center text-sm transition-colors"
-            :class="phoneClass"
-          >
-            <Phone class="w-4 h-4 mr-2" />
-            {{ contact?.phone }}
-          </a>
-          <button
-            class="inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors cursor-pointer"
-            :class="ctaBtnClass"
-            @click="scrollToSection('contact')"
-          >
-            Kontakt
-          </button>
-        </div>
+        <DesktopActions
+          :phone="contact?.phone"
+          :phone-class="phoneClass"
+          :cta-btn-class="ctaBtnClass"
+          @navigate="scrollToSection"
+        />
         <button
           class="lg:hidden p-2 transition-colors rounded-lg"
           :class="navBtnClass"
@@ -62,40 +37,23 @@
       </div>
     </div>
 
-    <div v-if="isMobileMenuOpen" class="lg:hidden bg-white border-t border-border">
-      <div class="px-4 py-6 space-y-3">
-        <button
-          v-for="link in navLinks"
-          :key="link.sectionId"
-          class="block w-full text-left px-4 py-2 text-sm font-medium text-foreground hover:text-accent hover:bg-muted rounded-lg transition-colors"
-          @click="scrollToSection(link.sectionId)"
-        >
-          {{ link.label }}
-        </button>
-        <div class="pt-4 space-y-3">
-          <a
-            :href="'tel:' + contact?.phone?.replace(/\s/g, '')"
-            class="flex items-center justify-center px-4 py-2 text-sm text-muted-foreground hover:text-accent transition-colors"
-          >
-            <Phone class="w-4 h-4 mr-2" />
-            {{ contact?.phone }}
-          </a>
-          <button
-            class="w-full inline-flex items-center justify-center px-4 py-2 rounded-md text-sm font-medium transition-colors bg-accent text-accent-foreground hover:bg-accent/90"
-            @click="scrollToSection('contact')"
-          >
-            Kontakt
-          </button>
-        </div>
-      </div>
-    </div>
+    <MobileMenu
+      :is-open="isMobileMenuOpen"
+      :nav-links="navLinks"
+      :contact="contact"
+      @navigate="scrollToSection"
+    />
   </header>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import { Menu, X, Phone } from 'lucide-vue-next'
+import { Menu, X } from 'lucide-vue-next'
 import { useContentStore } from '@/stores/content'
+import CompanyLogo from './Header/CompanyLogo.vue'
+import NavigationButton from './Header/NavigationButton.vue'
+import DesktopActions from './Header/DesktopActions.vue'
+import MobileMenu from './Header/MobileMenu.vue'
 
 const store = useContentStore()
 const contact = computed(() => store.contactInfo)
