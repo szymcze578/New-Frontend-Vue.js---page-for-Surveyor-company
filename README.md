@@ -8,6 +8,8 @@
 
 A modern, responsive single-page website for **Geodimetr**, a professional geodetic surveying company based in Zawiercie, Silesia, Poland. All content is managed via Sanity CMS.
 
+**Live site:** [geodeta-zawiercie.pl](https://geodeta-zawiercie.pl)
+
 ## Tech Stack
 
 | Layer | Technology |
