@@ -1,19 +1,5 @@
 import { defineType, defineField } from 'sanity'
-
-const iconOptions = [
-  { title: 'Telefon (Kontakt)', value: 'Phone' },
-  { title: 'Plik z checkmarkiem (Dokumentacja)', value: 'FileCheck' },
-  { title: 'Pinezka mapy (Pomiary)', value: 'MapPinned' },
-  { title: 'Zaznaczony okrąg (Odbiór)', value: 'CheckCircle2' },
-  { title: 'Mapa', value: 'Map' },
-  { title: 'Linijka (Pomiary)', value: 'Ruler' },
-  { title: 'Plik tekstowy', value: 'FileText' },
-  { title: 'Lokalizacja (Pin)', value: 'MapPin' },
-  { title: 'Klucz (Serwis)', value: 'Wrench' },
-  { title: 'Kalendarz', value: 'Calendar' },
-  { title: 'Zegar', value: 'Clock' },
-  { title: 'Tarcza (Bezpieczeństwo)', value: 'Shield' },
-]
+import { iconOptions } from './shared/iconOptions'
 
 export const processStepSchema = defineType({
   name: 'processStep',

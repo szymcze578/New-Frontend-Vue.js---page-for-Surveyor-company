@@ -1,16 +1,5 @@
 import { defineType, defineField } from 'sanity'
-
-const iconOptions = [
-  { title: 'Mapa projektowa', value: 'Map' },
-  { title: 'Budynek (Deweloper)', value: 'Building2' },
-  { title: 'Podział nieruchomości', value: 'Scissors' },
-  { title: 'Ewidencja gruntów', value: 'FileText' },
-  { title: 'Pomiary (Linijka)', value: 'Ruler' },
-  { title: 'Obsługa inwestycji', value: 'TrendingUp' },
-  { title: 'Dom', value: 'Home' },
-  { title: 'Cel / Tarczy', value: 'Target' },
-  { title: 'Blask / Nowy', value: 'Sparkles' },
-]
+import { iconOptions } from './shared/iconOptions'
 
 export const serviceSchema = defineType({
   name: 'service',

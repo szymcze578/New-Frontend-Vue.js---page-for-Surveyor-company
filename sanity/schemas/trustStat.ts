@@ -1,13 +1,5 @@
 import { defineType, defineField } from 'sanity'
-
-const iconOptions = [
-  { title: 'Cel (Dokładność)', value: 'Target' },
-  { title: 'Kalendarz (Dostępność)', value: 'Calendar' },
-  { title: 'Trofeum (Projekty)', value: 'Trophy' },
-  { title: 'Zegar (Doświadczenie)', value: 'Clock' },
-  { title: 'Gwiazda', value: 'Star' },
-  { title: 'Odznaka', value: 'BadgeCheck' },
-]
+import { iconOptions } from './shared/iconOptions'
 
 export const trustStatSchema = defineType({
   name: 'trustStat',

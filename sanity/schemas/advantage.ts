@@ -1,15 +1,5 @@
 import { defineType, defineField } from 'sanity'
-
-const iconOptions = [
-  { title: 'Technologia (Błyskawica)', value: 'Zap' },
-  { title: 'Obsługa (Słuchawki)', value: 'Headphones' },
-  { title: 'Certyfikaty (Odznaka)', value: 'BadgeCheck' },
-  { title: 'Szybkość (Zegar)', value: 'Clock' },
-  { title: 'Zespół (Użytkownicy)', value: 'Users' },
-  { title: 'Lokalizacja (Glob)', value: 'Globe' },
-  { title: 'Tarcza (Bezpieczeństwo)', value: 'Shield' },
-  { title: 'Nagroda (Trofeum)', value: 'Award' },
-]
+import { iconOptions } from './shared/iconOptions'
 
 export const advantageSchema = defineType({
   name: 'advantage',
