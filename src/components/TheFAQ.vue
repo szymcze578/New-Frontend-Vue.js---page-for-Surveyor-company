@@ -46,10 +46,10 @@
           Nie znalazłeś odpowiedzi na swoje pytanie?
         </p>
         <a
-          href="tel:+48 602 319 486"
+          :href="'tel:' + contact?.phone?.replace(/\s/g, '')"
           class="inline-flex items-center text-accent font-semibold hover:text-accent/80 transition-colors"
         >
-          Skontaktuj się z nami: +48 602 319 486
+          Skontaktuj się z nami: {{ contact?.phone }}
         </a>
       </div>
 
@@ -66,6 +66,7 @@ import SectionHeader from './widgets/SectionHeader.vue'
 const store = useContentStore()
 
 const faqs = computed(() => store.faqs)
+const contact = computed(() => store.contactInfo)
 
 const openIndex = ref<number | null>(null)
 
